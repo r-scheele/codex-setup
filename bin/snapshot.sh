@@ -62,7 +62,6 @@ for policy in enabled-providers.json model-picker.json discovery-mode.json user-
 done
 
 {
-  printf 'snapshot_utc=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
   printf 'machine=%s\n' "$(scutil --get ComputerName 2>/dev/null || hostname)"
   printf 'macos=%s\n' "$(sw_vers -productVersion 2>/dev/null || true)"
   printf 'codex=%s\n' "$(codex --version 2>/dev/null || true)"
