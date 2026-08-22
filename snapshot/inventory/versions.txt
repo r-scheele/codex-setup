@@ -1,5 +1,5 @@
 machine=AbdulrahmanMacbookPro
 macos=27.0
-codex=codex-cli 0.149.0
+codex=
 router_commit=9a2ae67663b5a1aed6ed3d53b70b5b5967d9e2a1
 router_remote=https://github.com/duolahypercho/codex-router.git
