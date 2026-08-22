@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flash Costing Verification"
+  short_description: "Verify Flash Costing work against real flows"
+  default_prompt: "Use $flash-costing-continuous-verification to implement this Flash Costing change with requirement-by-requirement verification."

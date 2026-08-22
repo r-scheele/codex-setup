@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seamstream Task Run"
+  short_description: "Run Seamstream work with design guardrails."
+  default_prompt: "Use $seamstream-task-run for Seamstream implementation work with frontend design-system judgment."

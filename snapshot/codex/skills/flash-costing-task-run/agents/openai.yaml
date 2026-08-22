@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flash Costing Task Run"
+  short_description: "Run production Flash/Open tasks."
+  default_prompt: "Use $flash-costing-task-run to implement this Flash or Open Costing task with senior backend, database-design, and frontend design-system judgment."

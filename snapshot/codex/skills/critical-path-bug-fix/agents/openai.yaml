@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Path Bug Fix"
+  short_description: "Fix bugs without design-system drift"
+  default_prompt: "Use $critical-path-bug-fix to reproduce, root-cause, minimally fix, and verify this Critical Path bug without design-system drift."

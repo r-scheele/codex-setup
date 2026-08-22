@@ -1,0 +1,4 @@
+interface:
+  display_name: "Continuous Verification"
+  short_description: "Verify requirements before declaring code done"
+  default_prompt: "Use $continuous-verification to implement this feature with requirement-by-requirement verification."

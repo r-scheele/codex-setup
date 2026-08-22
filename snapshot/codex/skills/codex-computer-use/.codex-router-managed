@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "codex-computer-use",
+  "token": "70ed1720e9b7ec741a79b95571b7876e2f443f74be1eb0097dda76320eee8696",
+  "source": {
+    "packageVersion": "0.4.0-beta.4",
+    "commit": "9a2ae67663b5a1aed6ed3d53b70b5b5967d9e2a1"
+  }
+}

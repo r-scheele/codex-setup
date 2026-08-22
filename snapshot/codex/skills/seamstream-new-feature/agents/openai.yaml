@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seamstream New Feature"
+  short_description: "Build Seamstream features with UI consistency."
+  default_prompt: "Use $seamstream-new-feature to implement a Seamstream feature while preserving the design system."

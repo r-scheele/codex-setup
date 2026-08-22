@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "providers": [
+    "opencode-free",
+    "opencode-go",
+    "anthropic-api",
+    "deepseek",
+    "grok-api",
+    "zai-coding",
+    "zai-api",
+    "kimi-oauth"
+  ]
+}

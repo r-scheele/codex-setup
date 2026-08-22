@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flash Costing Guidelines"
+  short_description: "Apply production Flash/Open rules."
+  default_prompt: "Use $flash-costing-guidelines before and during this Flash or Open Costing change with senior backend, database-design, and frontend design-system judgment."

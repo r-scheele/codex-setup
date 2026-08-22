@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "codex-app-threads",
+  "token": "7c1f3d61210bb54574e9e9b91e41f3d63f72db8a2693547251722eb517885060",
+  "source": {
+    "packageVersion": "0.4.0-beta.4",
+    "commit": "9a2ae67663b5a1aed6ed3d53b70b5b5967d9e2a1"
+  }
+}

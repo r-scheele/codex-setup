@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seamstream PR Review"
+  short_description: "Review Seamstream PRs for code and UI drift."
+  default_prompt: "Use $seamstream-pr-review to review a Seamstream PR or branch for code regressions and design-system drift."

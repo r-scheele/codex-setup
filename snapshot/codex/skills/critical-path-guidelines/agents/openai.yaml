@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Path Guidelines"
+  short_description: "Coding and frontend design-system guardrails"
+  default_prompt: "Use $critical-path-guidelines to keep this Critical Path change aligned with coding standards and the frontend design system."

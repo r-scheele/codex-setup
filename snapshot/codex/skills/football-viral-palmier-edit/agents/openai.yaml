@@ -1,0 +1,4 @@
+interface:
+  display_name: "Football Viral Palmier Edit"
+  short_description: "Autonomous football edit workflow"
+  default_prompt: "Use $football-viral-palmier-edit to find a 2020-present Footballia match, research a viral football format, and prepare a Palmier edit project."

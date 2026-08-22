@@ -1,0 +1,14 @@
+version = 1
+id = "dependabot-pr-triage"
+kind = "cron"
+name = "Dependabot PR triage"
+prompt = "Check the Neo repository for open Dependabot pull requests and open Dependabot security alerts. Summarize which PRs are passing, failing, behind their base branch, security-related, or likely major-version/high-risk updates. Implement recommended actions when they are low-risk for the codebase. For Dependabot PRs that pass your checks and are low-risk, update the branch if needed, wait for required checks, then merge them into their base branch using the repository's normal squash-merge flow. Do not merge failing PRs, major-version upgrades, Expo/React Native core-stack upgrades, auth/security-sensitive package upgrades such as Clerk, or anything that changes behavior in a way that needs human product or security judgment. Recommend next actions for anything left open and call out anything urgent."
+status = "ACTIVE"
+rrule = "FREQ=WEEKLY;BYDAY=MO"
+model = "gpt-5-codex"
+reasoning_effort = "low"
+execution_environment = "local"
+target = { type = "project", project_id = "50f2345c-6514-47f2-a63f-6b8d85c6572c" }
+cwds = ["__HOME__/Desktop/code/neo"]
+created_at = 1779954739609
+updated_at = 1779955010131

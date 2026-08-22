@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "models": [
+    {
+      "slug": "opencode-free/big-pickle",
+      "gatewayModel": "opencode-free-big-pickle",
+      "compHash": "opencode-free-big-pickle-user-v1",
+      "upstreamModel": "big-pickle",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "big-pickle (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 100,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/deepseek-v4-flash-free",
+      "gatewayModel": "opencode-free-deepseek-v4-flash-free",
+      "compHash": "opencode-free-deepseek-v4-flash-free-user-v1",
+      "upstreamModel": "deepseek-v4-flash-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "deepseek-v4-flash-free (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 101,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/hy3-free",
+      "gatewayModel": "opencode-free-hy3-free",
+      "compHash": "opencode-free-hy3-free-user-v1",
+      "upstreamModel": "hy3-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "hy3-free (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 102,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/laguna-s-2.1-free",
+      "gatewayModel": "opencode-free-laguna-s-2-1-free",
+      "compHash": "opencode-free-laguna-s-2-1-free-user-v1",
+      "upstreamModel": "laguna-s-2.1-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "laguna-s-2.1-free (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 103,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/mimo-v2.5-free",
+      "gatewayModel": "opencode-free-mimo-v2-5-free",
+      "compHash": "opencode-free-mimo-v2-5-free-user-v1",
+      "upstreamModel": "mimo-v2.5-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "mimo-v2.5-free (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 104,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/muse-spark-1.2-contributor-free",
+      "gatewayModel": "opencode-free-muse-spark-1-2-contributor-free",
+      "compHash": "opencode-free-muse-spark-1-2-contributor-free-user-v1",
+      "upstreamModel": "muse-spark-1.2-contributor-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "muse-spark-1.2-contributor-free (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 105,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/nemotron-3-ultra-free",
+      "gatewayModel": "opencode-free-nemotron-3-ultra-free",
+      "compHash": "opencode-free-nemotron-3-ultra-free-user-v1",
+      "upstreamModel": "nemotron-3-ultra-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "nemotron-3-ultra-free (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 106,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/nemotron-3.5-lightning-free",
+      "gatewayModel": "opencode-free-nemotron-3-5-lightning-free",
+      "compHash": "opencode-free-nemotron-3-5-lightning-free-user-v1",
+      "upstreamModel": "nemotron-3.5-lightning-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "nemotron-3.5-lightning-free (curated)",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 107,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    },
+    {
+      "slug": "opencode-free/x-preview-f-free",
+      "gatewayModel": "opencode-free-x-preview-f-free",
+      "compHash": "opencode-free-x-preview-f-free-user-v1",
+      "upstreamModel": "x-preview-f-free",
+      "provider": "opencode-free",
+      "listed": true,
+      "displayName": "Ox Alpha Free",
+      "description": "User-curated opencode-free model; conservative default metadata that can be edited in the user model file.",
+      "priority": 108,
+      "defaultEffort": "high",
+      "reasoningLevels": [
+        {
+          "effort": "high",
+          "description": "Adaptive reasoning"
+        }
+      ],
+      "contextWindow": 131072,
+      "autoCompact": 110000,
+      "inputModalities": [
+        "text"
+      ]
+    }
+  ]
+}

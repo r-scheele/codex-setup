@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Path PR Hygiene"
+  short_description: "Triage PRs while preserving UI patterns"
+  default_prompt: "Use $critical-path-pr-hygiene to review this Critical Path PR, isolate actionable comments, and preserve frontend UI patterns while handling conflict risk safely."

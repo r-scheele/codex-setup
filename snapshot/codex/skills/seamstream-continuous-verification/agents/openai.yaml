@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seamstream Verification"
+  short_description: "Verify Seamstream changes across real app layers"
+  default_prompt: "Use $seamstream-continuous-verification to implement this Seamstream change with requirement-by-requirement verification."

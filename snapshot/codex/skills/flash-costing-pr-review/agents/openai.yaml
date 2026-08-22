@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flash Costing PR Review"
+  short_description: "Review Flash/Open PRs rigorously."
+  default_prompt: "Use $flash-costing-pr-review as a senior backend, database-design, and frontend design-system reviewer to review this Flash or Open Costing PR or diff."

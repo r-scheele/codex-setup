@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seamstream Guidelines"
+  short_description: "Seamstream rules and frontend design guardrails."
+  default_prompt: "Use $seamstream-guidelines for Seamstream code changes with frontend design-system consistency."

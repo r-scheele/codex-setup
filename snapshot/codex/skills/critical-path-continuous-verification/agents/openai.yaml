@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Path Verification"
+  short_description: "Verify Critical Path code changes end to end"
+  default_prompt: "Use $critical-path-continuous-verification to implement this Critical Path change with requirement-by-requirement verification."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ticket Worker Orchestration"
+  short_description: "Split large work into owned tickets"
+  default_prompt: "Use $ticket-worker-orchestration to break this product plan into isolated worker tickets and review prompts."

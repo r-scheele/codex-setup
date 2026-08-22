@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Path Task Run"
+  short_description: "Run tasks with design-system judgment"
+  default_prompt: "Use $critical-path-task-run to implement this Critical Path task with minimal diff, clear reporting, and frontend design-system judgment."

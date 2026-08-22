@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.rscheele.codex-setup-sync</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>__REPO__/bin/sync.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>HOME</key>
+    <string>__HOME__</string>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StartInterval</key>
+  <integer>900</integer>
+  <key>ThrottleInterval</key>
+  <integer>60</integer>
+  <key>WatchPaths</key>
+  <array>
+    <string>__HOME__/.codex/config.toml</string>
+    <string>__HOME__/.codex/AGENTS.md</string>
+    <string>__HOME__/.codex/agents</string>
+    <string>__HOME__/.codex/rules</string>
+    <string>__HOME__/.codex/skills</string>
+    <string>__HOME__/.agents/skills</string>
+    <string>__HOME__/.codex/automations</string>
+    <string>__HOME__/.codex/codex-router/enabled-providers.json</string>
+    <string>__HOME__/.codex/codex-router/model-picker.json</string>
+    <string>__HOME__/.codex/codex-router/user-models.json</string>
+  </array>
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/codex-setup-sync.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/codex-setup-sync.log</string>
+</dict>
+</plist>

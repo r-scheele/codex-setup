@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seamstream PR Hygiene"
+  short_description: "Triage Seamstream PRs and UI review fixes."
+  default_prompt: "Use $seamstream-pr-hygiene to triage or update a Seamstream PR while preserving frontend design consistency."

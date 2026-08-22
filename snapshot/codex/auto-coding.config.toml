@@ -1,0 +1,7 @@
+# codex --profile auto-coding
+# auto/coding
+model                          = "auto/coding"
+model_provider                 = "omniroute"
+model_context_window           = 1048576
+model_auto_compact_token_limit = 891289
+tool_output_token_limit        = 32768

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flash Costing PR Hygiene"
+  short_description: "Triage Flash/Open PRs safely."
+  default_prompt: "Use $flash-costing-pr-hygiene to triage or update this Flash or Open Costing PR with senior backend, database-design, and frontend design-system judgment."

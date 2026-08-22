@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seamstream Bug Fix"
+  short_description: "Fix Seamstream bugs without UI drift."
+  default_prompt: "Use $seamstream-bug-fix to fix a Seamstream bug while preserving frontend design consistency."

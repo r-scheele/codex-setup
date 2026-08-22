@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flash Costing Bug Fix"
+  short_description: "Fix Flash/Open production bugs."
+  default_prompt: "Use $flash-costing-bug-fix to triage and fix this Flash or Open Costing bug with senior backend, database-design, and frontend design-system judgment."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flash Costing New Feature"
+  short_description: "Build production Flash/Open features."
+  default_prompt: "Use $flash-costing-new-feature to implement this Open Costing task from the local task sheet with senior backend, database-design, and frontend design-system judgment."

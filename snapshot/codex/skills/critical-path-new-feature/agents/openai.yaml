@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critical Path New Feature"
+  short_description: "Implement features with UI guardrails"
+  default_prompt: "Use $critical-path-new-feature to scope, implement, and verify this Critical Path feature while preserving the frontend design system."

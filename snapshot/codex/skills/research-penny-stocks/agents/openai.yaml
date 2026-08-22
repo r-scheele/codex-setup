@@ -1,0 +1,4 @@
+interface:
+  display_name: "Speculative Stock Research"
+  short_description: "Evidence-first discovery and stock diligence"
+  default_prompt: "Use $research-penny-stocks to discover and compare sector-balanced opportunities, with or without a ticker, and build a catalyst-aware research brief or diversified budget basket."
