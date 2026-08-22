@@ -23,6 +23,4 @@ PY
 chmod 600 "$target"
 launchctl bootout "gui/$UID" "$target" 2>/dev/null || true
 launchctl bootstrap "gui/$UID" "$target"
-launchctl kickstart -k "gui/$UID/com.rscheele.codex-setup-sync"
 print "Automatic Codex setup sync installed: $target"
-
