@@ -1,5 +1,5 @@
 notify = ["__HOME__/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
-model = "opencode-free/x-preview-f-free"
+model = "kimi-oauth/k3"
 model_reasoning_effort = "high"
 service_tier = "default"
 approval_policy = "never"
@@ -40,6 +40,10 @@ last_revision = "b42a45a068e080294924bfba19a7a2e8944c48ff"
 source_type = "git"
 source = "https://github.com/ayghri/i-have-adhd.git"
 ref = "main"
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = "__HOME__/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [plugins."documents@openai-primary-runtime"]
 enabled = true
@@ -191,12 +195,13 @@ NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin
 NODE_REPL_TRUSTED_CODE_PATHS = "__HOME__/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 CODEX_HOME = "__HOME__/.codex"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_TINYSKY_ENABLED = "0"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.814.41407"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"__HOME__/.codex/plugins/cache/openai-bundled/browser/26.814.41407/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.818.41509"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"__HOME__/.codex/plugins/cache/openai-bundled/browser/26.818.41509/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "__HOME__/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
@@ -488,6 +493,9 @@ trust_level = "trusted"
 [projects."__HOME__/Documents/Codex/2026-08-22/https-github-com-duolahypercho-codex-router"]
 trust_level = "trusted"
 
+[projects."__HOME__/Documents/Codex/2026-08-23/ins"]
+trust_level = "trusted"
+
 [hooks.state]
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:session_start:0:0"]
@@ -515,9 +523,4 @@ name = "Codex Router (external models)"
 base_url = "http://127.0.0.1:4202/_codex-router/__CODEX_ROUTER_CALLER_SECRET__/v1"
 wire_api = "responses"
 supports_standalone_web_search = true
-
-[marketplaces.openai-bundled]
-last_updated = "2026-08-22T07:42:48Z"
-source_type = "local"
-source = "__HOME__/.codex/.tmp/bundled-marketplaces/openai-bundled"
 # END codex-router-provider-managed
