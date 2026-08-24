@@ -1,5 +1,5 @@
 notify = ["__HOME__/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
-model = "kimi-oauth/k3"
+model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
 service_tier = "default"
 approval_policy = "never"
