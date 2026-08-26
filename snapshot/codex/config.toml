@@ -23,11 +23,6 @@ env_key = "OMNIROUTE_API_KEY"
 requires_openai_auth = false
 wire_api = "responses"
 
-[marketplaces.openai-primary-runtime]
-last_updated = "2026-08-19T23:00:39Z"
-source_type = "local"
-source = "__HOME__/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
-
 [marketplaces.ponytail]
 last_updated = "2026-08-08T06:21:17Z"
 last_revision = "2ed6c52c9d7e5e56942508591085fd45dea277d3"
@@ -532,4 +527,8 @@ name = "Codex Router (external models)"
 base_url = "http://127.0.0.1:4202/_codex-router/__CODEX_ROUTER_CALLER_SECRET__/v1"
 wire_api = "responses"
 supports_standalone_web_search = true
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = "__HOME__/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 # END codex-router-provider-managed
