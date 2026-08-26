@@ -502,6 +502,9 @@ trust_level = "trusted"
 [projects."__HOME__/Desktop/code/charlottetown-taxi"]
 trust_level = "trusted"
 
+[projects."__HOME__/Desktop/code/mvp"]
+trust_level = "trusted"
+
 [hooks.state]
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:session_start:0:0"]
