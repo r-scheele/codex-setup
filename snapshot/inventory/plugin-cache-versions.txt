@@ -8,11 +8,11 @@ openai-curated-remote/alpaca/1.0.0
 openai-curated-remote/binance/5.0.1
 openai-curated-remote/biorender/2.0.0
 openai-curated-remote/fiscal-ai/2.0.0
-openai-curated-remote/github/0.1.11-5f7cd798dc99
-openai-curated-remote/gmail/0.1.9
-openai-curated-remote/google-calendar/1.2.6
+openai-curated-remote/github/0.1.12-5f7cd798dc99
+openai-curated-remote/gmail/0.1.10
+openai-curated-remote/google-calendar/1.2.7
 openai-curated-remote/google-contacts/1.0.0
-openai-curated-remote/google-drive/0.1.15
+openai-curated-remote/google-drive/0.1.16
 openai-curated-remote/investment-banking/0.1.29
 openai-curated-remote/openai-developers/1.2.3
 openai-curated-remote/openai-templates/0.1.1
