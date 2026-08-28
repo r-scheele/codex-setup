@@ -504,6 +504,9 @@ trust_level = "trusted"
 [projects."__HOME__/Desktop/code/mvp"]
 trust_level = "trusted"
 
+[projects."__HOME__/Documents/Codex/2026-08-28/019ff5da-5820-7583-9d50-a2180a8e1bd0"]
+trust_level = "trusted"
+
 [hooks.state]
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:session_start:0:0"]
