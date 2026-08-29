@@ -5,6 +5,7 @@ openai-bundled/computer-use/1.0.1000816
 openai-bundled/sites/0.1.43
 openai-bundled/visualize/1.0.22
 openai-curated-remote/alpaca/1.0.0
+openai-curated-remote/apollo/4.0.1
 openai-curated-remote/binance/5.0.1
 openai-curated-remote/biorender/2.0.0
 openai-curated-remote/fiscal-ai/2.0.0
