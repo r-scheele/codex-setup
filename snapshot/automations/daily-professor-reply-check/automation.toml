@@ -1,0 +1,10 @@
+version = 1
+id = "daily-professor-reply-check"
+kind = "heartbeat"
+name = "Daily professor reply check"
+prompt = "Check the Gmail account abdulrahmanolamilekan88@gmail.com for new replies to the PhD cold emails with the subject “PhD applicant interested in AI for process and energy systems” since the previous check. Report only new professor replies. For each reply, show the professor’s name, university if identifiable, a short plain-language summary, whether it is positive, neutral, negative, or an automatic response, and the exact next action Abdulrahman should take. Clearly highlight positive replies. Do not send any email or change the tracker. If there are no new replies, say that plainly."
+status = "ACTIVE"
+rrule = "RRULE:FREQ=DAILY;BYHOUR=9;BYMINUTE=0"
+target_thread_id = "01a051d1-e591-70b1-9a1f-51e8887fdad3"
+created_at = 1788098117480
+updated_at = 1788098117480
