@@ -1,0 +1,4 @@
+interface:
+  display_name: "Memecoin Onchain Analysis"
+  short_description: "Assess memecoin setups with evidence and risk controls"
+  default_prompt: "Use $memecoin-onchain-analysis to assess this memecoin setup and separate verified evidence from guide heuristics."
