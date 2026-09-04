@@ -220,7 +220,7 @@ url = "https://developers.openai.com/mcp"
 url = "https://connect.composio.dev/mcp"
 
 [desktop]
-conversationDetailMode = "STEPS_PROSE"
+conversationDetailMode = "STEPS_COMMANDS"
 ambient-suggestions-enabled = true
 keepRemoteControlAwakeWhilePluggedIn = true
 show-context-window-usage = false
