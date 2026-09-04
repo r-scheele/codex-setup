@@ -62,6 +62,16 @@ Apply these rules for every implementation unless the user explicitly overrides 
 - Keep PR descriptions and merge-conflict update descriptions plain-language, code-free, and limited to what was done unless the user explicitly asks for different content or code.
 - Treat Odoo as strictly read-only for implementation, debugging, and verification. Never perform create, write, update, delete, import, workflow-triggering, or any other change-making action in Odoo or through Odoo-connected tools/scripts; only use read operations.
 
+## Immediate Post-Implementation Stress Test
+
+- Immediately after every implementation or meaningful fix, run a stress-test pass before handoff, commit, or push. This is mandatory even when focused tests and the happy path already pass.
+- Re-read the request and exercise every acceptance criterion through the active product path. Include the expected success path, denied/negative path, boundary states, persistence after reload, and every UI/API surface that must stay synchronized without a manual refresh.
+- Build fresh branch-local data for the target scenario. Deliberately remove or neutralize legacy stages, fallback records, cached state, broad admin access, or other stale data that could satisfy an old condition and mask a defect. Then rerun with representative existing data to check compatibility.
+- For tenant- or role-scoped work, test the target tenant and role plus the nearest non-target tenant and opposite role. Prove both what appears and what must remain hidden or forbidden in the backend.
+- For product-visible changes, exercise the real user action in the Browser at relevant desktop and mobile sizes, inspect loading/error/disabled states and console/network failures, reload the page, and compare synchronized UI state. If Browser QA is unavailable, use the closest authenticated product/API path and report the missing visual proof explicitly.
+- Use focused existing checks only; do not add or update automated tests. If any stress-test case fails, fix the root cause and repeat the complete affected matrix, not only the failed case.
+- Do not describe an implementation as complete until the stress-test matrix passes or a concrete blocker and its unverified cases are reported.
+
 ## Preflight Checkpoint
 
 - Before editing code, send a short pre-implementation checkpoint and wait for confirmation if the change touches permissions, roles, workflow behavior, API scope, serializer/service boundaries, failure semantics, or any business rule that is not explicit in the request.
