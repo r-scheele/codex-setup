@@ -66,9 +66,13 @@ Apply these rules for every implementation unless the user explicitly overrides 
 
 - Immediately after every implementation or meaningful fix, run a stress-test pass before handoff, commit, or push. This is mandatory even when focused tests and the happy path already pass.
 - Re-read the request and exercise every acceptance criterion through the active product path. Include the expected success path, denied/negative path, boundary states, persistence after reload, and every UI/API surface that must stay synchronized without a manual refresh.
-- Build fresh branch-local data for the target scenario. Deliberately remove or neutralize legacy stages, fallback records, cached state, broad admin access, or other stale data that could satisfy an old condition and mask a defect. Then rerun with representative existing data to check compatibility.
+- Build the target workflow from scratch after the implementation through the real creation path, not only from a prepared fixture or existing record. For order workflow changes, this means creating a fresh drop and order, completing the prerequisite allocation/setup steps, and confirming the new order receives the expected stages, configuration, and permissions before exercising the changed action.
+- Then rerun the same affected behavior on representative existing data. Deliberately remove or neutralize legacy stages, fallback records, cached state, or other stale data that could satisfy an old condition and mask a defect.
+- Use normal non-admin brand and factory users with their real team permissions for the primary end-to-end proof. Admin or superuser checks may supplement this but must not replace them.
 - For tenant- or role-scoped work, test the target tenant and role plus the nearest non-target tenant and opposite role. Prove both what appears and what must remain hidden or forbidden in the backend.
 - For product-visible changes, exercise the real user action in the Browser at relevant desktop and mobile sizes, inspect loading/error/disabled states and console/network failures, reload the page, and compare synchronized UI state. If Browser QA is unavailable, use the closest authenticated product/API path and report the missing visual proof explicitly.
+- For menus, dropdowns, tooltips, modals, popovers, and other overlays, open them over nearby headers, navigation, drawers, cards, and tables at desktop and mobile sizes. Confirm the layer is fully visible, not clipped, and remains clickable above surrounding content.
+- When markup, scripts, or controls move between a page layout and a partial such as navigation, trace every consumer of shared page dependencies such as CSRF tokens, modal roots, element IDs, and data hooks. Exercise at least one action outside the changed partial so a dependency has not been accidentally scoped to only one part of the page.
 - Use focused existing checks only; do not add or update automated tests. If any stress-test case fails, fix the root cause and repeat the complete affected matrix, not only the failed case.
 - Do not describe an implementation as complete until the stress-test matrix passes or a concrete blocker and its unverified cases are reported.
 
@@ -163,6 +167,8 @@ Apply these rules for every implementation unless the user explicitly overrides 
 - Did I re-read the review comment/transcript for explicit “do not do X / keep Y / leave blank” instructions?
 - Did I classify the change as ASOS-only, TechnoSport-only, or shared from both the request and the active tenant flags, and verify that the non-target tenant is unaffected when scoped?
 - Did I verify the brand and factory journeys, or document the explicit role restriction and the non-target-role check?
+- Did I create a fresh drop and order through the real product workflow after the implementation, confirm the expected stages/configuration appeared, and then repeat the affected behavior on an existing order?
+- Did I use normal non-admin brand and factory team users for the primary end-to-end proof instead of relying on admin, superuser, or manually prepared database state?
 - Did I find and verify every synchronized UI surface or API entry point affected by the changed state, including persistence/two-way synchronization where relevant?
 - When stored names, labels, durations, statuses, or units changed, did I substitute representative values into every existing formatter and check the exact combined output for duplicated or reordered text?
 - Did I populate those exact values in branch-local data and inspect the rendered result through each affected user-facing surface before considering the PR ready?
@@ -170,6 +176,8 @@ Apply these rules for every implementation unless the user explicitly overrides 
 - For UI changes, did I inspect nearby templates, CSS/theme files, static JS, and comparable screens before changing the surface?
 - For UI changes, did I compare buttons, colors, icons, spacing, copy, empty states, and error/success feedback against nearby platform examples and fix or explain every intentional deviation?
 - For UI changes, did I preserve accessibility, responsive behavior, and saved state such as form values, tabs, filters, selections, loading/error states, local/session storage, refresh behavior, and save payloads?
+- For overlays, did I open menus, tooltips, dropdowns, modals, or popovers against nearby navigation and content at desktop and mobile sizes and confirm their stacking, clipping, and clickability?
+- If markup or scripts moved between the page layout and a partial, did I trace shared CSRF tokens, modal roots, IDs, and data hooks and verify an affected action outside that partial still works?
 - For UI changes with screenshots, did I carefully compare the before and after screenshots side-by-side and identify the exact visible diff, including anything that changed unintentionally or disappeared?
 - Did I identify and surface all assumptions, especially around ownership, permissions, state meaning, navigation behavior, and user-facing wording?
 - Did I verify that feature availability, authorization, routing, and workflow behavior contain no hard-coded tenant/brand names, entity IDs, usernames/emails, team names, or role names, and that UI and backend use the same permission/configuration source?
