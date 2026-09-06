@@ -4,7 +4,7 @@
 - Use neutral branch names such as `feat/...`, `fix/...`, `chore/...`, `setup/...`, or `devops/...`. Do not include AI or tool branding.
 - If the task is review-comment or merge-conflict work on an open PR, work directly on the existing PR head branch unless the user asks for a separate branch.
 - If the main checkout is dirty, still use a fresh isolated worktree for new implementation work. Do not modify or revert unrelated local changes in the main checkout.
-- After creating or switching into an isolated worktree, make sure local ignored development files are available when needed: copy `AGENTS.md` from the main checkout if present, verify it is ignored, and copy or point to the ignored local `db.sqlite3` only for local verification. Never stage, commit, push, or PR these local files.
+- After creating or switching into an isolated worktree, make sure local ignored development files are available when needed: copy `AGENTS.md` and its `.instruction-guides/` directory from the main checkout if present, verify it is ignored, and copy or point to the ignored local `db.sqlite3` only for local verification. Never stage, commit, push, or PR these local files.
 - Do not commit, push, retarget, merge, or close PRs unless the user explicitly asks.
 - Treat pushing as its own separate permission. Do not infer permission to run
   `git push`, create a PR, retarget a PR, merge a PR, close a PR, or delete a

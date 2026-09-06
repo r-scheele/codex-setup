@@ -1,7 +1,7 @@
 ## Branch And Verification
 
 - For new feature implementation work in Critical Path repositories, always create a fresh isolated worktree from the latest `origin/dev` before any code edit or local verification unless the user explicitly asks for a different base/workflow.
-- After creating or switching into a Critical Path worktree, make sure the local `AGENTS.md` instructions file is present in that worktree before editing. If the file exists in the main checkout but is not tracked, copy it into the worktree and verify `git check-ignore -v AGENTS.md` shows it is locally ignored. Never stage, commit, push, or PR `AGENTS.md`.
+- After creating or switching into a Critical Path worktree, make sure the local `AGENTS.md` instructions file is present in that worktree before editing. If the file exists in the main checkout but is not tracked, copy it and its `.instruction-guides/` directory into the worktree and verify `git check-ignore -v AGENTS.md` shows it is locally ignored. Never stage, commit, push, or PR `AGENTS.md`.
 - After creating the fresh worktree, do not automatically open it in VS Code. Only open a worktree in VS Code when the user explicitly asks for it or when live Source Control visibility is specifically useful for the task. If opening VS Code is requested and the `code` CLI is unavailable, say so and continue; editor visibility is not a substitute for required CLI checks and real-user QA.
 - Create each new feature branch from `dev` by default unless the user explicitly requests a different base branch.
 - For PR review fixes, review-comment follow-ups, or any implementation work requested against an already-open PR, always work directly on the existing PR head branch unless the user explicitly requests a different workflow.
