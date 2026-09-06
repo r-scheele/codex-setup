@@ -1,8 +1,7 @@
 ---
 name: memecoin-onchain-analysis
-description: Assess memecoins and onchain token setups using liquidity, contract, deployer, holder, wallet, volume, narrative, timing, and risk evidence. Use for token due diligence, new-pair reviews, wallet-flow analysis, launch or migration checks, revival candidates, trade post-mortems, and reusable memecoin checklists. Do not use for generic crypto news or automatic trade execution.
+description: Investigate a specific memecoin contract, pool, or wallet-flow setup using current onchain evidence. Research only; no trade execution.
 ---
-
 # Memecoin Onchain Analysis
 
 Turn a chaotic token setup into a short, evidence-led decision. Treat the source guide as a collection of heuristics, not verified market law.

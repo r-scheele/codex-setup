@@ -1,0 +1,27 @@
+## Reviews And Handoff
+
+- Before implementing any significant technical approach, endpoint split, permission design, or business-logic mapping, restate the decision and ask for confirmation. Do not proceed on assumptions.
+- For PR review workflows, treat unresolved review threads as the source of truth and separate actionable threads from informational comments.
+- For PR review workflows on an open PR, make code changes on the existing PR head branch, not on a new child/review/dedicated branch, unless the user explicitly asks for a separate branch.
+- For PR review workflows on an open PR, fetch and merge latest `origin/dev` into that PR branch before addressing review comments, and fix merge conflicts there before continuing.
+- Treat repeated reviewer conventions as project conventions. If the same API/review rule shows up across comments or PRs, encode it here before the next implementation.
+- When a review comment points to a repeated local pattern, search the touched flow and branch diff for equivalent cases before stopping at the reviewed line. Group those equivalent fixes together in the update back to the user.
+- For review fixes, list every unresolved review comment and map each one to `fixed`, `already addressed/outdated`, or `blocked`, with the exact change made.
+- For each review fix, include a reproducible verification note: what to trigger, expected outcome, and which command/check was run.
+- Explain the user-visible outcome, meaningful technical changes, and verification concisely; expand the walkthrough when requested.
+- When explaining a change, cover both levels: PM-facing outcome first, then the technical path through the code (file, function, control flow, validation, persistence, and side effects) so the implementation can be reviewed without re-reading the full diff.
+- In final `Technical notes` for bug fixes, explain the code in the same order the user/app flow runs instead of only following raw diff order. Include a clickable markdown link with the absolute file path and exact line number for each important step, for example `[apps/static/js/orders/order_bom.js](__HOME__/Desktop/code/critical-path-dj/apps/static/js/orders/order_bom.js:2245)`. Start from the user action, then follow the frontend handler, local state/cache changes, API request, backend validation/persistence, response handling, and final UI state.
+- For critical-path bug explanations, map each high-level technical claim to the exact files/lines that make it true. Do not leave a sentence like "centralizes parsing" or "binds the handler reliably" unsupported. Under each claim, list the relevant clickable code paths in app-flow order and briefly state what each path contributes.
+- Leave review threads unresolved by default after pushing fixes. Let the reviewer verify and resolve unless the user explicitly asks you to resolve them.
+- If the user explicitly asks you to resolve review threads, do it only after the fix is committed, pushed, and the latest thread state confirms the issue is addressed.
+- If multiple review threads report the same root issue, make one minimal fix and handle the equivalent threads together.
+- Report task-owned diff and review-thread status without treating unrelated pre-existing edits as a blocker.
+- At the end of implementation, include a plain-language feature summary that maps what was implemented to the original request or acceptance criteria.
+- For seed, default-data, import, synchronization, or migration changes that alter user-visible values, run the real local population path and verify the resulting UI; do not hand off based only on database rows, shell output, static inspection, or tests.
+- When sharing screenshot proof with the user, embed each screenshot inline in the chat using Markdown image syntax with an absolute local file path, for example `![Setup tab](/absolute/path/setup.png)`. Do not provide screenshot paths as plain text in place of inline images unless the user explicitly asks for paths only.
+- Put a brief plain-language note before or after each inline screenshot explaining what it proves. Do not include Playwright code, UI-test code, capture scripts, curl commands, or other automation/code artifacts unless the user explicitly asks for that code.
+- If any required UI step cannot be shown because of local data, permissions, or setup limits, say so explicitly and describe the missing proof instead of claiming full end-to-end screenshot coverage.
+- When creating a pull request, default the PR description to only what was done, in plain language, unless the user explicitly requests different content. Keep it code-free unless the user explicitly asks for code in the description.
+- After `gh pr create` or `gh pr edit`, verify the live PR body with `gh pr view --json body` and immediately patch out any AI/editor/tool branding lines before handing the PR to the user.
+
+Do not add or update automated tests unless the user explicitly overrides that project restriction. Use relevant existing checks and real product/API verification. For visible changes, capture matching full-page before/after evidence and verify affected target/non-target tenants, brand/factory roles, responsive states, and persistence. Backend-only work uses an appropriate existing command or API check. Report unavailable proof accurately; finish independent work without repeatedly asking for an evidence waiver. Repeat broader checks only for new failures, shared-code risk, or explicit acceptance criteria.

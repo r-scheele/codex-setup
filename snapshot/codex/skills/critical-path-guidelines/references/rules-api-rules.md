@@ -1,0 +1,32 @@
+## API Rules
+
+- For workflow/status fields backed by Django `TextChoices`, always persist a named enum value across the repo. Do not use `blank=True`, `null=True`, or empty-string database values as an implicit extra state. If the product needs a draft/editable state, model it as an explicit enum choice such as `DRAFT` or `UNKNOWN`, and migrate existing blank rows to that enum value in the same change.
+- Do not keep redundant workflow timestamp fields anywhere in the repo when Activity records or existing audit history already represent the same lifecycle events. If one lifecycle timestamp is unnecessary, inspect the sibling timestamps in that workflow as well (for example sent/approved timestamps) and remove the redundant set together unless the product explicitly still needs one of them.
+- Protect read endpoints with the same care as write endpoints. `GET` APIs need the correct permission class and entity-scoped lookup/queryset logic; authentication alone is not enough.
+- For `SoftDeletableModel` querysets that already use the default manager or a standard related manager, do not add redundant `is_removed=False` filters. Only add an explicit soft-delete filter when using a non-default manager/path or when the product logic truly needs removed rows included or excluded in a non-default way.
+- Keep permission-specific behavior explicit.
+- For brand/factory-owned resources, prefer entity-scoped lookups plus `has_entity_auth_permission` / `require_entity_auth_permission` over generic permission checks.
+- For class-based views using `EntityRequiredMixin`, `BrandRequiredMixin`, or `FactoryRequiredMixin`, use the mixin-provided `self.entity` and `self.entity_type` instead of inferring the entity or entity type from `extra_context`, session, profile, or request data.
+- Default each mutation API to one business permission check. Prefer a single `change_*` permission for save/update endpoints unless the requirement explicitly needs something else.
+- Before introducing a custom permission codename, check the model's existing Django permissions (`add_*`, `change_*`, `delete_*`, `view_*`) and nearby workflow permissions. Reuse the narrowest existing permission when it matches the action; add a custom permission only when the product needs a separately assignable capability, and state why reuse is unsafe.
+- When a write endpoint maps to an existing model/entity permission, prefer the repo's permission helpers (for example `@has_auth_permission("<app>.<codename>")`) over hand-rolled brand/admin checks in the view.
+- If the correct permission path exists in code but is missing from local team/brand data, adjust only local/test data for verification or ask how production permissions should be assigned. Do not add or change production seeding/population/config code to grant permissions unless the requirement explicitly asks for production permission backfill. Do not bake fallback role logic into the endpoint.
+- Do not stack multiple permission decorators on one save endpoint unless the API truly requires all of them. If one endpoint spans multiple permission domains, split the behavior instead.
+- Match role restrictions to the real workflow. If both brand and factory can perform an action, do not hardcode `IsBrandUser`.
+- For new API behaviors, prefer dedicated DRF view actions over overloading existing actions with behavior flags.
+- Prefer DRF viewsets/mixins over `GenericAPIView` when the same behavior can be expressed cleanly with the local viewset/router pattern.
+- When a standard router-registered `GenericViewSet`/mixin pattern already exists in the app for similar APIs, prefer matching that pattern over introducing a standalone `GenericAPIView` + manual `path()` route.
+- Keep generic quick-edit endpoints narrow. If a field has its own permission boundary or workflow side effects, move it to a dedicated endpoint instead of extending the generic PATCH.
+- Do not change an API's supported field scope implicitly. If fields move out of a shared endpoint, keep the contract explicit in review and replace it with dedicated endpoints in the same change.
+- Keep serializer contracts aligned to writable model fields; strip helper flags before persistence.
+- Keep API responses resource-oriented: `GET 200`, `POST 201`, `PATCH/PUT 200`, `DELETE 204`.
+- Preserve DRF mixin/viewset methods by using their extension hooks for side effects, such as `perform_create`, `perform_update`, and `perform_destroy`; do not reimplement `create`, `update`, or `destroy` just to insert secondary work.
+- For JSON/API endpoints, use DRF `Response` or Django `JsonResponse`; do not introduce raw `HttpResponse` for JSON responses.
+- In DRF write endpoints, prefer `serializer.is_valid(raise_exception=True)` so invalid payloads return structured 4xx responses.
+- For DRF write methods, add the repo's `@has_auth_permission(...)` decorator by default. If the intended permission boundary is still "allow all authenticated/entity-authorized users", use the empty decorator form instead of omitting the permission hook entirely.
+- If model validation (`full_clean()`) can raise Django `ValidationError`, convert it to DRF `serializers.ValidationError` at the serializer/view boundary.
+- In DRF endpoints, do not add redundant `transaction.atomic()` wrappers when request-level atomic transactions are already enabled in local settings or existing app configuration.
+- Avoid blanket `except Exception` in API write flows. Catch expected exception types; if a broad catch is unavoidable, log context and re-raise unknown exceptions.
+- For attachment/file type transitions, authorize against the target operation or target type unless the requirement explicitly calls for checking both.
+- Do not remove defensive error handling around secondary processing unless that secondary failure is intended to fail the primary request too.
+

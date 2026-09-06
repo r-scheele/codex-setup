@@ -1,8 +1,7 @@
 ---
 name: mengtofrontend
-description: Audit and refine landing pages to avoid generic AI-generated visual quality problems using Meng To's frontend design checklist. Use when asked to review, polish, improve, redesign, or prepare a landing page before launch, especially for typography, letter spacing, font choice, image authenticity, AI-generated visuals, prompt quality, micro-interactions, and final human design details.
+description: "Review or refine a landing page\u2019s typography, imagery, layout, and interactions while preserving its established brand."
 ---
-
 # MengToFrontend
 
 ## Overview

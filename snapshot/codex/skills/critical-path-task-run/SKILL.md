@@ -1,64 +1,14 @@
 ---
 name: critical-path-task-run
-description: Use when implementing Critical Path / critical-path-dj feature work, bug fixes, UI changes that must preserve the frontend design system, Django changes, migrations, review fixes, or tasks that mention critical-path-guidelines, MannyAI, Pattern, factories, brands, orders, BOM, CAD, drops, or stages.
+description: Route an implementation task in Critical Path to feature, bug-fix, or PR work. Use the most specific workflow once.
 ---
 
-# Critical Path Task Run
+# Critical Path Task Router
 
-## Overview
+Read `critical-path-guidelines` once for shared domain, workspace, authorization, and verification policy. Use the active checkout’s applicable AGENTS.md and only relevant domain references. If the companion skill is unavailable, continue from the checkout’s instructions and report a missing rule only if it prevents a safe decision.
 
-Run Critical Path work as a production-safe delivery loop: clarify business behavior first, reuse existing paths, make the smallest code change, verify, then report in business language before technical detail.
+Choose one workflow: `critical-path-bug-fix` for a defect, `critical-path-new-feature` for a feature, `critical-path-pr-review` for a findings-only review, or `critical-path-pr-hygiene` for requested PR maintenance. Do not invoke all workflows for one task. If the specific workflow is already loaded, do not reload it here.
 
-## Required sub-skill
+Use the request and accessible evidence to establish the expected outcome. Complete necessary, reversible supporting changes within the requested outcome. Ask only for unresolved product/access decisions, separate scope, unauthorized external actions, or destructive operations. Reuse authorization already given in this task.
 
-Use `$critical-path-guidelines` whenever available. It contains the repo-specific rules and overrides this guide if there is a conflict.
-
-## Workflow
-
-1. **Intake**
-   - Translate the request into: objective, user/workflow impact, exact behavior change, and what must not change.
-   - If the request contains meeting notes or review text, extract only actionable product requirements.
-   - Classify tenant scope as ASOS-only, TechnoSport-only, or shared; state the intended brand and factory behavior.
-   - Identify every synchronized user-facing surface or API entry point that must show the changed state, including any required two-way synchronization.
-   - Ask before changing permissions, roles, API contracts, serializer/service boundaries, migrations, failure semantics, or unclear business rules.
-
-2. **Branch and workspace safety**
-   - For Critical Path app repositories, default base is `dev` unless the user names another base. If the repository path is not already clear from the session, inspect the current workdir or ask before changing branches.
-   - Before edits: fetch, checkout/update the intended base, then create or confirm the feature branch.
-   - Use neutral branch names only: `feat/<short-description>` for features and `fix/<short-description>` for bug fixes. Never use AI, editor, tool, or automation-branded prefixes, even if a platform default suggests them.
-   - If the worktree is dirty or branch intent is ambiguous, stop and report the blocker.
-
-3. **Implementation discipline**
-   - Reuse existing views, serializers, services, templates, JS modules, tests, and UI patterns first.
-   - For UI work, inspect comparable screens, nearby templates, CSS/theme files, static JS modules, and active component patterns before editing.
-   - Preserve existing design principles, CSS variables/classes, color semantics, component patterns, JS helpers, accessibility, and responsive behavior.
-   - Do not introduce unapproved UI libraries, CSS frameworks, palettes, fonts, icon sets, animation libraries, bundlers, or one-off visual systems.
-   - Keep the diff minimal. Do not rename, reformat, remove code, or reshape working logic unless required.
-   - Never hand-write Django migrations; use `uv run python manage.py makemigrations`.
-   - Prefer local non-Docker commands with `DJANGO_READ_DOT_ENV_FILE=true`.
-
-4. **Verification**
-   - Run the smallest meaningful tests/checks first; expand only if risk justifies it.
-   - For UI work, verify the relevant page or at least inspect the JS/template path.
-   - Verify both brand and factory journeys; for deliberately role-scoped work, verify the other role is unchanged.
-   - Verify every synchronized surface identified during intake, including persisted/two-way behavior where applicable.
-   - Before handoff, verify no unapproved UI library, palette, font, icon set, framework, or visual language was introduced.
-   - Review `git diff --stat`, `git diff --name-only`, and the full diff for scope drift.
-
-## Final response
-
-Use this order:
-- what changed
-- why it changed, in PM/business language
-- how to verify quickly
-- technical notes only where helpful
-- risks or assumptions
-
-## Common mistakes
-
-| Mistake | Fix |
-|---|---|
-| Treating meeting transcript as one big spec | Extract actionable requirements and ignore chatter. |
-| Starting from current feature branch by accident | Reset to the intended base first. |
-| Solving with a new abstraction | Reuse existing local patterns unless required. |
-| Reporting only files changed | Explain business/user/workflow impact first. |
+Finish the authorized implementation and relevant checks; report the result and any real blocker. A plan or first patch alone is not completion.

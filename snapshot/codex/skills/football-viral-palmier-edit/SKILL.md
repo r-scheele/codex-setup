@@ -1,8 +1,7 @@
 ---
 name: football-viral-palmier-edit
-description: Use when creating autonomous football or soccer YouTube edits from Footbalia/Footballia or local match footage with Palmier Pro, including viral-format research, project folder setup, Palmier edit prompts, thumbnails, titles, descriptions, tags, and upload-ready deliverables.
+description: Create upload-ready football edits from authorized match footage with Palmier Pro, including research, audio, and export checks.
 ---
-
 # Football Viral Palmier Edit
 
 ## Goal
@@ -30,11 +29,10 @@ Default business target: English-speaking Europe, the UK, and the US. Optimize s
 - For goal-based football edits, never clip only the final shot or aftermath. Each goal sequence must start where the playmaking starts, continue through the finish, and end with the goal scorer's celebration. If this makes the edit longer than the target length, prioritize complete football moments over the nominal duration.
 - Avoid repeated full-screen score cards or title cards between every goal. Use smooth transitions and compact context labels unless a single opening/end card is truly needed.
 - Avoid generic "AI edit" tells: do not overuse giant captions, random effects, repeated templates, abrupt unexplained jumps, unrelated overlays, or scoreboard cards that interrupt the football. Every effect should support the play, the song, or the story.
-- When music is explicitly requested, make the cut rhythm feel intentional. Put major finishes, replays, transitions, and celebration peaks on clear musical moments when possible. Prefer retiming football footage slightly over stretching commercial music; document any retime ratio.
-- Use a creative commentary/music mix only when music is explicitly requested and the source commentary or crowd has value. Keep music as the main energy only for requested music-led edits; otherwise make commentary/crowd the main audio. In hybrid mixes, duck music under goal calls, emotional commentator lines, player-name moments, or big crowd roars, then bring it back to full volume. When the user asks for commentary/crowd to overshadow the music, make exact goal-impact windows where broadcast audio dominates while the song remains faintly audible underneath unless the user explicitly asks for full silence or a full mute. If a hard numerical target conflicts with audible music, prioritize the latest user preference and document the actual processed stem gap plus a music-audibility check.
-- Interpret dB requests carefully. If the user says "make commentary louder by/about 12 dB," treat it as a gain request only when there is no relative reference. If they say "12 dB instead of 17-25 dB," treat it as a target commentary-over-music stem gap. Use per-window gain/ducking when the music's natural loudness changes, and verify both the measured gap and that music remains audible in every checked window.
 - Before declaring the final MP4 upload-ready, visually inspect the rendered video or a dense contact sheet and confirm the audio by more than metadata. Spot-check the actual rendered audio around multiple goal/celebration windows; when a hybrid mix is promised, verify that commentary/crowd is audibly present and louder than the music in selected moments. Confirm the edit does not cut away before goals or scorer celebrations, transitions blend smoothly, repeated score-card interstitials are absent, and music/commentary choices feel deliberate. If the review fails, rerender before final delivery.
 - Do not rip, record, or download commercial music from Spotify, YouTube, MP3 mirrors, or other streaming/piracy sources. If the user wants music, use a local file they are allowed to use or download from a legitimate stock/licensing service whose page clearly permits the intended use. Record the track title, artist, source URL, license URL/name, local file, and whether commentary was removed.
+
+For explicitly requested music or numerical audio levels, read [audio mixing](references/audio-mixing.md).
 
 ## Workflow
 

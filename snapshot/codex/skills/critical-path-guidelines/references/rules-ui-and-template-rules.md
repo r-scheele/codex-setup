@@ -1,0 +1,33 @@
+## UI And Template Rules
+
+- Treat the current UI as the design source of truth for frontend work. Inspect nearby templates, CSS/theme files, static JS, and comparable screens before changing UI.
+- Preserve the existing product design principle and visual language. Reuse existing color variables, palette, semantic states, spacing, border radius, typography, tables, forms, buttons, modals, tabs, cards, badges, empty/loading/error states, and responsive behavior.
+- Reuse existing UI libraries, helpers, icon patterns, and JavaScript patterns before creating anything new.
+- Do not add a new UI library, CSS framework, icon set, font, palette, animation library, bundler, or one-off visual system unless the task explicitly requires it and the handoff calls it out.
+- Preserve accessibility: labels, focus states, keyboard access, contrast, readable errors, non-overlapping text, and stable mobile/desktop layouts.
+- Preserve saved state, not just display state. Trace form values, filters, tabs, selections, loading/error state, storage-backed state, refresh behavior, and save payloads when UI changes can affect persistence.
+- Never hardcode internal endpoints in templates; use Django `{% url %}` tags.
+- Prefer Tailwind utility classes over ad-hoc CSS or inline styling.
+- Reuse existing UI helpers and components before adding new ones.
+- Use the project's established UI libraries when they apply. In Critical Path templates, prefer DaisyUI components/utilities for supported UI affordances such as tooltips, buttons, badges, modals, dropdowns, tabs, and loading states instead of native browser-only behavior, ad-hoc CSS, or custom markup. For other project-standard libraries, follow the same rule: use the local library/pattern consistently before inventing a one-off implementation.
+- Before shipping UI changes, run a consistency pass against nearby platform examples: primary/secondary/destructive button styling, button sizes, colors, icon family, badges, spacing, disabled states, hover/focus states, and copy style. Fix inconsistencies or explicitly report why the new UI intentionally differs.
+- Before reusing an existing UI action for a new workflow, inspect and state the action's current product meaning, side effects, and user-facing copy. If the requested workflow has a different meaning or object of action, do not overload the existing button; preserve the old action and add a separate control that matches the relevant local pattern.
+- When a requested UI appears awkward, hard to understand, difficult to navigate, visually inconsistent, or likely to confuse a real user, stop and ask a PM-facing question or push back with a concrete alternative. Do not implement a poor UX silently just because it was requested.
+- For user-facing actions, match color semantics already used in the platform: neutral/black for primary save/navigation actions, green/success for positive completion/approval actions, red/error for destructive or issue/error actions, and outline/white for secondary actions unless the local pattern says otherwise.
+- When a task is driven by an Excel sheet, mockup, screenshot, or other visual reference, implement the visible wording, section order, table shape, and labels exactly as the mockup unless the user explicitly approves a deviation. Do not add explanatory labels, helper text, headings, placeholders, or extra UI copy that is not present in the mockup.
+- When a mockup shows user metadata as `User (Brand)` or `User (Factory)`, treat `Brand`/`Factory` as an entity placeholder unless the requirement explicitly asks for the literal entity type. Display the actual entity name (for example the brand or factory name) and match the mockup separator style; do not leave generic `Brand`/`Factory` labels or add brackets if the platform/mockup uses dot or pipe separators.
+- Fixes must be system-wide where relevant, not only one page/card if the same logic exists elsewhere.
+- Avoid duplicate logic paths for the same behavior; keep one source of truth.
+- Prefer DB-level operations (`count()`, `annotate()`, aggregates) over loading records and computing in Python.
+- Prefer incremental UI recalculation over full-table/full-page recompute.
+- Never interpolate unsanitized user-controlled strings into HTML.
+- For floating UI positioned from `getBoundingClientRect()`, account for scroll offsets and clamp within visible bounds.
+- For shared UI components used by multiple actions, keep behavior-specific constraints explicit and per-action.
+- Preserve existing role-specific branches and request payload semantics; do not widen conditions or add hidden/default values unless explicitly required.
+- For page-level `can_edit` or similar UI gating on brand/factory screens, keep the check aligned with the same entity permission helper used by the API so superusers and role-based permissions stay consistent.
+- Do not add fallback defaults that hide missing business data unless the product explicitly wants a fallback.
+- Before modifying a shared icon, template partial, or reusable component, inspect current usages and keep existing contexts working.
+- If UI/UX behavior moves to a new page/flow, remove the superseded path in the same change.
+- For tabbed pages with shared filters, place shared controls in the common header and apply them consistently across relevant tabs.
+- Prefer the project icon system when available (Lucide in base templates) instead of introducing new inline SVG markup.
+

@@ -1,51 +1,15 @@
 ---
 name: codex-in-app-browser
-description: Drive the Codex in-app browser (open, navigate, click, type, screenshot, read page state) through the app's own node_repl runtime. Use when the session uses a custom (non-OpenAI) model, for example deepseek-v4-flash or mimo-v2.5, and the user asks to use the in-app browser, open or navigate a page in it, test a local app in a browser, or click, type, or take a screenshot in the Codex browser panel.
+description: 'For custom-model sessions: read and operate browser pages using the browser tools exposed in the current session.'
 ---
 
-# Codex In-App Browser
+# Current Browser Tools for Custom Models
 
-The tool is `mcp__node_repl__js`. It is available in this session.
+Use only in a confirmed custom-model session that needs browser interaction. Tool names, schemas, and documentation supplied by the running session are authoritative.
 
-## First: read the official skill
+1. Prefer a purpose-built connector or CLI for the task. For UI interaction, discover the currently exposed computer/browser tools. If `mcp__cua_repl.js` or its normalized equivalent is present, follow its first-call and returned documentation exactly.
+2. Use a legacy `mcp__node_repl__js` bootstrap only when that tool is actually exposed and its matching installed runtime documentation exists. Locate the current plugin version instead of constructing a stale path. Do not assume `@oai/sky`, `globalThis.agent`, or a particular browser ID.
+3. After interaction, inspect fresh UI state and verify the requested result. Respect the current tool’s authorization and safety rules. Reuse live handles as documented.
+4. If the legacy tool is absent, continue with the supported current UI tool or connector. Report a blocker only when no authorized supported path can complete the required action.
 
-The official skill is authoritative. Read it before any browser work:
-
-`~/.codex/plugins/cache/openai-bundled/browser/<version>/skills/control-in-app-browser/SKILL.md`
-
-Find the latest `<version>` directory (for example `26.803.41515`).
-
-## Bootstrap (once per session)
-
-Send this as ONE line through `mcp__node_repl__js`:
-
-```js
-if (globalThis.agent?.browsers == null) { const { setupBrowserRuntime } = await import("<plugin root>/scripts/browser-client.mjs"); globalThis.agent = await setupBrowserRuntime(); }
-```
-
-Replace `<plugin root>` with the browser plugin path. Then bind the
-in-app browser and read its documentation:
-
-```js
-globalThis.iab = await agent.browsers.get("iab");
-nodeRepl.write(await iab.documentation());
-```
-
-Read the complete documentation output before interacting with the page.
-
-## Rules
-
-- Send code as ONE line, or use `@file:<path>` with a trailing newline.
-  The runtime fires on newline; input without a trailing newline silently
-  does nothing.
-- Reuse the existing `agent` and `iab` bindings on later turns. Do not
-  reinitialize.
-- `open_in_codex` only OPENS a tab. It cannot click, type, or read. Use
-  `mcp__node_repl__js` for interaction.
-- Never start your own node_repl process and never write a side-channel
-  driver. Use the tool you were given.
-
-## If the tool is missing
-
-Stop and report that `mcp__node_repl__js` is not in the tool list. Do not
-build workarounds.
+Do not start a side-channel UI driver, fabricate tool calls, or use `open_in_codex` as if it could read or click a page.

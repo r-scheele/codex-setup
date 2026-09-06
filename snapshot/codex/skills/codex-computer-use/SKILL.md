@@ -1,49 +1,15 @@
 ---
 name: codex-computer-use
-description: Control local apps through Computer Use (the @oai/sky runtime) inside the Codex app. Use when the session uses a custom (non-OpenAI) model, for example deepseek-v4-flash or mimo-v2.5, and the user asks to control the computer, operate a desktop app's UI, use Safari or Chrome through computer use, click or type in an app, or take a screenshot of an app. Prefer purpose-built connectors, APIs, or CLIs when they exist.
+description: 'For custom-model sessions: operate native apps using the current computer-use tools when a connector or CLI cannot do the task.'
 ---
 
-# Codex Computer Use
+# Current Native App Tools for Custom Models
 
-The runtime is `@oai/sky`, imported through `mcp__node_repl__js` (available
-in this session).
+Use only in a confirmed custom-model session that needs native app interaction. Tool names, schemas, and documentation supplied by the running session are authoritative.
 
-## First: read the official skill
+1. Prefer a purpose-built connector or CLI for the task. For UI interaction, discover the currently exposed computer/browser tools. If `mcp__cua_repl.js` or its normalized equivalent is present, follow its first-call and returned documentation exactly.
+2. Use a legacy `mcp__node_repl__js` bootstrap only when that tool is actually exposed and its matching installed runtime documentation exists. Locate the current plugin version instead of constructing a stale path. Do not assume `@oai/sky`, `globalThis.agent`, or a particular browser ID.
+3. After interaction, inspect fresh UI state and verify the requested result. Respect the current tool’s authorization and safety rules. Reuse live handles as documented.
+4. If the legacy tool is absent, continue with the supported current UI tool or connector. Report a blocker only when no authorized supported path can complete the required action.
 
-The official skill is authoritative. Read it before any computer-use work:
-
-`~/.codex/plugins/cache/openai-bundled/computer-use/<version>/skills/computer-use/SKILL.md`
-
-Find the latest `<version>` directory.
-
-## Load the runtime (once per session)
-
-Send this as ONE line through `mcp__node_repl__js`:
-
-```js
-globalThis.sky = (await import("@oai/sky")).sky;
-nodeRepl.write("sky: " + typeof sky);
-```
-
-Confirm the output says `sky: object` before continuing. The import
-connects to the SkyComputerUseService, which is already running.
-
-## Rules
-
-- Send code as ONE line, or use `@file:<path>` with a trailing newline.
-  The runtime fires on newline; input without a trailing newline silently
-  does nothing.
-- Reuse the loaded `sky` runtime on later turns. Do not reinitialize.
-- The first computer-use action may need approval in the app
-  (Settings → Computer use). Common apps such as Safari and Chrome are
-  usually pre-approved.
-- Prefer purpose-built connectors, APIs, and CLIs over computer use when
-  they exist. Computer use is for reading or operating app UI that nothing
-  else can reach.
-- Never start your own node_repl process and never write a side-channel
-  driver. Use the tool you were given.
-
-## If the tool is missing
-
-Stop and report that `mcp__node_repl__js` is not in the tool list. Do not
-build workarounds.
+Do not start a side-channel UI driver, fabricate tool calls, or use `open_in_codex` as if it could read or click a page.

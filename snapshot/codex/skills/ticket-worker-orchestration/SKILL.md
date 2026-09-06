@@ -1,8 +1,7 @@
 ---
 name: ticket-worker-orchestration
-description: Use when decomposing a product spec, MVP, week plan, or large implementation into independent worker tickets, owned file scopes, review prompts, subagent tasks, or parallel-safe execution plans.
+description: Split a large implementation into worker tickets with owned files, dependencies, acceptance criteria, and review gates.
 ---
-
 # Ticket Worker Orchestration
 
 ## Overview
@@ -22,7 +21,7 @@ Convert broad product plans into isolated, reviewable work packets. Each ticket 
 
 3. **Write each ticket**
    - Include workdir, branch/base if known, owned files, requirements, constraints, verification commands, and deliverable format.
-   - Require tests first for bug fixes or behavior changes.
+   - Inherit the active project’s verification policy. Specify meaningful checks without imposing tests-first or new-test requirements that contradict it.
    - For review-only tasks, say “do not modify files.”
 
 4. **Add review gates**

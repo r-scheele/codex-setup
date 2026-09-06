@@ -1,8 +1,7 @@
 ---
 name: research-penny-stocks
-description: Research low-priced, microcap, small-cap, mid-cap, OTC, distressed, and asymmetric-growth stocks with an evidence-first, manipulation-aware workflow and no default share-price ceiling. Use when Codex is asked to discover opportunities without a ticker, investigate a named company, screen themes such as memory chips, defense, drones, robotics, automation, mining, or energy, vet social-media DD, analyze dilution or cash runway, compare speculative stocks, build a catalyst watchlist, rank opportunities, or allocate a small budget across a diversified research basket.
+description: Research speculative stocks, catalysts, dilution, and liquidity, or build a sourced watchlist. Research only; no trade execution.
 ---
-
 # Research Speculative and Asymmetric Stocks
 
 ## Core rule

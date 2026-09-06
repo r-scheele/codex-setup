@@ -1,45 +1,43 @@
 ---
 name: codex-router
-description: Orientation for custom (non-OpenAI) models running in the Codex app through the codex-router proxy. Explains that the app's native tools arrive as flattened codex_app__ and mcp__ names, that the router restores them so the app executes them, which companion skills to read before threads, browser, or computer-use work, and that a turn with no tool call ends the task. Use when the session uses a custom (non-OpenAI) model, for example deepseek-v4-flash or mimo-v2.5, when codex_app__ or mcp__ tool names appear in the tool list, when a tool result just arrived and more work remains, or when thread, browser, or computer-use work is requested.
+description: Diagnose tool relay, model routing, or usage behavior in a confirmed custom-model session using the local model router.
 ---
-
 # Codex Router (custom models in the Codex app)
 
-You are a custom model. The Codex app routes your traffic through codex-router.
+Apply this only after the session confirms it uses a custom provider through the local router. The presence of MCP tools alone does not establish the model or routing path.
 
 ## How your tools work
 
 - The app's native tools appear in your tool list with flattened names:
   `codex_app__create_thread`, `codex_app__list_threads`,
   `mcp__node_repl__js`, `mcp__peekaboo__create_task`, and so on.
-- Call them with exactly those names. The router restores the original
+- Use the exact names currently exposed; the following names are examples, not an availability guarantee. The router restores the original
   namespace (for example `create_thread` in `codex_app`) before the app
   sees the call, so the app executes it natively.
 - The router never executes an app tool. It only relays definitions and
   results. If a call fails, fix your arguments; do not try to run the tool
   yourself.
 - Never spawn a side-channel driver. Do not start your own node_repl
-  process, do not fake MCP metadata, do not write driver scripts. The tools
-  you need are already in your tool list.
+  process, do not fake MCP metadata, do not write driver scripts. Use an available supported tool or report the specific missing capability.
 
-## Before each kind of work, read the matching skill
+## Companion guidance when needed
 
-- Threads, automations, navigation: read `codex-app-threads`.
-- In-app browser: read `codex-in-app-browser`.
-- Computer use: read `codex-computer-use`.
+- Threads, automations, navigation: use current native tools; read `codex-app-threads` only for custom-model relay guidance.
+- In-app browser: use current UI tools; read `codex-in-app-browser` only if relay guidance is needed.
+- Computer use: use current UI tools; read `codex-computer-use` only if relay guidance is needed.
 
 ## When a tool rejects your arguments
 
 The app answers `received invalid arguments.` when you missed a required
-field. Stop guessing. Read the matching skill for the exact shape, then
+field. Stop guessing. Read the current tool schema for the exact shape, then
 retry once with the correct arguments. Repeated guessing burns tokens and
 turns.
 
 ## Golden rules
 
 1. Use the tools you were given. Do not build workarounds.
-2. Read the companion skill before the relevant work.
-3. When a call fails, fix the arguments from the skill, then retry.
+2. Load a companion skill only when it adds guidance missing from the live tool documentation.
+3. When a call fails, fix the arguments from the current schema, then retry.
 4. A turn with no tool call ends the task. After a tool result, if more work
    still needs a tool, call it in the same turn. Do not only announce the next
    step. Text-only is for when the user's request is fully done.
@@ -47,7 +45,7 @@ turns.
 ## Spawned threads and model inheritance
 
 For a new local Codex thread, omit the `model` field unless the user
-explicitly requested one. The router selects the parent routed model. An
+explicitly requested one. Let the current task-creation tool use its documented default; do not assume parent-model inheritance. An
 explicit model is never overridden. Follow-up messages retain the target
 thread's settings, and cloud tasks choose their model outside this relay.
 
@@ -62,9 +60,7 @@ thread's settings, and cloud tasks choose their model outside this relay.
   and a `streamAborted` marker. A client cancel records status 0. If you see
   many `streamAborted` rows, the upstream connection is flaky; do not treat
   them as model behavior.
-- The app's displayed context window is 95% of the model's advertised
-  window. The per-turn input number you see in the app can include the
-  estimate; the running total can therefore exceed the real context usage.
+- Verify displayed context limits and usage behavior against the running app/router version. Historical percentages are not a current guarantee. Estimated token counts are not exact provider usage.
 
 ## If the session seems to stop mid-task
 
