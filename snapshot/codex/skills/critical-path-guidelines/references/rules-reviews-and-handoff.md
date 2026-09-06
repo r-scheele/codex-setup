@@ -1,10 +1,10 @@
 ## Reviews And Handoff
 
-- Before implementing any significant technical approach, endpoint split, permission design, or business-logic mapping, restate the decision and ask for confirmation. Do not proceed on assumptions.
+- Inspect the task and current behavior first. Ask only when a material product, access, or contract decision remains unresolved; proceed with already specified and authorized work.
 - For PR review workflows, treat unresolved review threads as the source of truth and separate actionable threads from informational comments.
-- For PR review workflows on an open PR, make code changes on the existing PR head branch, not on a new child/review/dedicated branch, unless the user explicitly asks for a separate branch.
-- For PR review workflows on an open PR, fetch and merge latest `origin/dev` into that PR branch before addressing review comments, and fix merge conflicts there before continuing.
-- Treat repeated reviewer conventions as project conventions. If the same API/review rule shows up across comments or PRs, encode it here before the next implementation.
+- For explicitly requested PR fixes on an open PR, make code changes on the existing PR head branch, not on a new child/review/dedicated branch, unless the user explicitly asks for a separate branch.
+- For authorized PR update/conflict-repair workflows, fetch and merge latest `origin/dev` into that PR branch before addressing review comments, and fix merge conflicts there before continuing.
+- Use repeated reviewer conventions as evidence of local practice. Do not modify standing instructions or expand the task merely because a convention recurs; propose an instruction change only when requested or record it in the current task report.
 - When a review comment points to a repeated local pattern, search the touched flow and branch diff for equivalent cases before stopping at the reviewed line. Group those equivalent fixes together in the update back to the user.
 - For review fixes, list every unresolved review comment and map each one to `fixed`, `already addressed/outdated`, or `blocked`, with the exact change made.
 - For each review fix, include a reproducible verification note: what to trigger, expected outcome, and which command/check was run.

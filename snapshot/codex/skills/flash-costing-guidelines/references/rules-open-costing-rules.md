@@ -12,6 +12,6 @@
 - Do not double-count profit when profit is included in CPM.
 - Accepting or rejecting a factory response must not overwrite the original result.
 - Factory token access must expose only the linked request, respect expiry, and lock submitted responses unless explicitly reopened.
-- Add or update tests for every implemented Open Costing task or bug fix.
+- Follow the shared Flash Costing verification policy: prove changed behavior with focused coverage and add a regression test when existing coverage is insufficient.
 - Do not silently resolve conflicts between the specification, decisions, and existing code. State the conflict and use the safest reversible implementation.
 

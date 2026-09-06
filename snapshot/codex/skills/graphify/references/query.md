@@ -9,7 +9,7 @@ Two traversal modes - choose based on the question:
 | BFS (default) | _(none)_ | "What is X connected to?" - broad context, nearest neighbors first |
 | DFS | `--dfs` | "How does X reach Y?" - trace a specific chain or dependency path |
 
-First check the graph exists:
+If using the Python fallback, resolve an installed interpreter; `.graphify_python` is optional metadata, not a required prerequisite. First check that the graph exists:
 ```bash
 $(cat graphify-out/.graphify_python) -c "
 from pathlib import Path
@@ -18,9 +18,9 @@ if not Path('graphify-out/graph.json').exists():
     raise SystemExit(1)
 "
 ```
-If it fails, stop and tell the user to run `/graphify <path>` first.
+If no graph is available, answer through focused source inspection when that meets the request. Build a graph only if explicitly requested or necessary for the selected graph task; do not make the user perform a prerequisite the agent can safely handle.
 
-### Step 0 — Constrained query expansion (REQUIRED before traversal)
+### Optional vocabulary expansion when a literal query misses relevant nodes
 
 graphify's `query` CLI matches nodes via case-folded substring + IDF — there is **no stemming, no synonyms, no cross-language match** inside the binary, and the inline fallback below matches the same way. If the user's question uses different language or different domain vocabulary than the graph's labels (user says "обработчик" / graph says "handler"; user says "authentication" / graph says "Guardian"), the literal matcher returns 0 hits and the answer collapses to noise.
 
@@ -56,11 +56,11 @@ print(f'vocab: {len(vocab)} tokens')
 ```
 Query expanded to (from graph vocab, N tokens): [token1, token2, ...]
 ```
-If the list is empty, say so plainly and stop — do not proceed to traversal.
+If the graph vocabulary cannot answer the question, say so and continue with focused source inspection; do not invent graph edges.
 
 ### Step 1 — Traversal
 
-Build the **expanded query string** by joining the selected tokens with spaces. Use this string as `QUESTION` below — NOT the original user question. (The original question is preserved only for `save-result` at the end.)
+Build the **expanded query string** by joining the selected tokens with spaces. Use this string as `QUESTION` below — NOT the original user question. (Keep the original question as the research objective; feedback writes are optional and require a user-requested graph-maintenance workflow.)
 
 Prefer the CLI when it is installed:
 ```bash
@@ -73,7 +73,7 @@ If the CLI is unavailable, load `graphify-out/graph.json` and run the traversal 
 1. Find the 1-3 nodes whose label best matches the expanded tokens.
 2. Run the appropriate traversal from each starting node.
 3. Read the subgraph - node labels, edge relations, confidence tags, source locations.
-4. Answer using **only** what the graph contains. Quote `source_location` when citing a specific fact.
+4. Distinguish graph-derived claims from live-source verification. Quote `source_location` for graph claims and verify important behavior in current source.
 5. If the graph lacks enough information, say so - do not hallucinate edges.
 
 ```bash
