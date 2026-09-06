@@ -41,3 +41,7 @@ Project verification policy overrides generic tests-first, automatic-test, and s
 Ponytail controls implementation simplicity, not requested scope, output style, or authorization. Complete every explicit requirement. Use neutral limitation comments instead of tool-branded markers; follow the project’s naming and test policy. Keep the output style above.
 
 Use the actual tools and schemas supplied by the running session. Legacy tool names or cache paths are examples, not availability guarantees. Use a supported current capability when an older one is absent; never fabricate a tool or bypass the supported UI interface.
+
+# Decision Quality
+
+- Make the best decision that will elevate all three: the user experience (UX), developer experience (DX), and agent experience (AX) always, without breaking anything.
