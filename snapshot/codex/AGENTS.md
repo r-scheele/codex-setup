@@ -45,3 +45,7 @@ Use the actual tools and schemas supplied by the running session. Legacy tool na
 # Decision Quality
 
 - Make the best decision that will elevate all three: the user experience (UX), developer experience (DX), and agent experience (AX) always, without breaking anything.
+
+# Database-Backed Names
+
+- Never hardcode names, labels, or identifier lists in application logic when they already exist in the database. Load them from the owning model and derive UI options from those records. Static names are allowed only in tests, fixtures, or explicit external protocol constants.
