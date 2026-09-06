@@ -1,3 +1,4 @@
+model_verbosity = "low"
 notify = ["__HOME__/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 model = "gpt-6-astra"
 model_reasoning_effort = "high"
@@ -155,6 +156,7 @@ enabled = true
 enabled = true
 
 [features]
+prevent_idle_sleep = true
 multi_agent = true
 memories = true
 js_repl = false
@@ -559,3 +561,6 @@ NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ec
 
 [apps.connector_5f3c8c41a1e54ad7a76272c89e2554fa.tools."google_drive.copy_file"]
 approval_mode = "approve"
+
+[features.context_management]
+experimental_mode = true
