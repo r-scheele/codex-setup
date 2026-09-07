@@ -24,8 +24,8 @@ source_type = "git"
 source = "https://github.com/DietrichGebert/ponytail.git"
 
 [marketplaces.i-have-adhd]
-last_updated = "2026-08-22T07:13:57Z"
-last_revision = "b42a45a068e080294924bfba19a7a2e8944c48ff"
+last_updated = "2026-09-07T10:16:08Z"
+last_revision = "58494af57962b2d7a996b4d419474380a299af5e"
 source_type = "git"
 source = "https://github.com/ayghri/i-have-adhd.git"
 ref = "main"
