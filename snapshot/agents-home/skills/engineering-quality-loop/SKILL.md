@@ -9,6 +9,14 @@ Deliver the requested behavior with credible evidence. A score summarizes engine
 
 **Never create or amend a Git commit unless the user explicitly asks for that commit action.** Implementing, fixing, validating, completing the task, or passing the quality gate does not authorize a commit. Otherwise leave changes uncommitted. This rule applies to the lead and every subagent; include it in delegated task instructions.
 
+## One implementation chat, one new worktree and branch
+
+Before implementation edits, create a fresh task-specific Git worktree and a new branch, and attach the implementation chat to that worktree through supported host controls. A worktree newly provisioned for this chat already satisfies creation; create its new branch before edits if it starts detached. Do not reuse another task's checkout. For continuation, review, and repairs of this same task, keep its recorded worktree and branch rather than creating more.
+
+The chat must have that worktree as its sole implementation workspace. Shell `cd`, `git -C`, or `git worktree add` alone does not change the chat's workspace. Follow [worktree.md](references/worktree.md) to establish and verify the host association before assigning writers. If association cannot be established, report BLOCKED before implementation; do not silently work in the original checkout or create a replacement chat. Read-only reviews remain read-only and do not create worktrees.
+
+Keep all implementation, tests, dev servers, file/review panels, and Codiff review pointed at this one worktree. Pass its absolute path and branch to every subagent, including the no-commit rule. Keep evidence outside the candidate snapshot in a task-specific location. Do not add the original checkout as a second implementation root, switch branches mid-task, or delete other worktrees/chats. Never create or amend a commit to set up isolation unless the user explicitly asks for that commit action.
+
 ## Start with the real task
 
 1. Read the current request, accessible brief, applicable project instructions, current diff, and affected callers. Preserve unrelated work. Before any writer starts, capture a Git baseline or hash/content snapshot for files the task requires to stay unchanged; a post-implementation fingerprint cannot prove preservation. Choose the actual task base for Git review, including relevant commits, staged/unstaged changes, and new files.
