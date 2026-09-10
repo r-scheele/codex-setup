@@ -49,3 +49,9 @@ Use the actual tools and schemas supplied by the running session. Legacy tool na
 # Database-Backed Names
 
 - Never hardcode names, labels, or identifier lists in application logic when they already exist in the database. Load them from the owning model and derive UI options from those records. Static names are allowed only in tests, fixtures, or explicit external protocol constants.
+
+# Worktree Review With Codiff
+
+Use the installed `codiff` skill for local review during every Git worktree implementation. Open the exact active worktree in Codiff once meaningful changes are ready, and refresh its narrative walkthrough before the final handoff. Explain what changed, why, and the verification results using the implementation conversation and actual diff. Cover the task's complete changes, including relevant commits, staged changes, unstaged changes, and new files; choose the actual task base instead of assuming `main` or showing only the staged subset. Preserve and distinguish unrelated user changes.
+
+The skill is at `__HOME__/.codex/skills/codiff/SKILL.md`; the terminal command is `codiff`. Prefer authoring the walkthrough in the current session through the skill. Keep reviews local unless the user explicitly requests sharing or uploading. Opening a review does not authorize commits, pushes, PR comments, or merges. Continue authorized implementation without requiring a plan-approval handoff. Codiff supplements required tests and browser QA. If it is unavailable, report the limitation and continue verification using the actual Git diff.
