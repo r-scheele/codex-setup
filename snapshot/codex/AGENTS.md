@@ -19,6 +19,8 @@ Skip unrelated non-engineering requests; honor an explicit task-specific opt-out
 A request to create/open/update a PR is not permission to create or amend a commit:
 only an explicit user request for that commit action authorizes it. UI tasks require
 real screenshots without waiting for the user to ask, as defined by the skill.
+This UI screenshot requirement is explicit user policy, not a generic recipe;
+project policies may add evidence requirements but cannot silently omit it.
 
 # First-Principles Completion Review
 
