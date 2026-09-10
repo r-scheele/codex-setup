@@ -7,6 +7,8 @@ description: Research, implement, independently review, and repair engineering w
 
 Deliver the requested behavior with credible evidence. A score summarizes engineering judgment; it never substitutes for a working implementation or grants release permission.
 
+**Never create or amend a Git commit unless the user explicitly asks for that commit action.** Implementing, fixing, validating, completing the task, or passing the quality gate does not authorize a commit. Otherwise leave changes uncommitted. This rule applies to the lead and every subagent; include it in delegated task instructions.
+
 ## Start with the real task
 
 1. Read the current request, accessible brief, applicable project instructions, current diff, and affected callers. Preserve unrelated work. Before any writer starts, capture a Git baseline or hash/content snapshot for files the task requires to stay unchanged; a post-implementation fingerprint cannot prove preservation. Choose the actual task base for Git review, including relevant commits, staged/unstaged changes, and new files.
