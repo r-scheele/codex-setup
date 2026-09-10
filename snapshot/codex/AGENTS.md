@@ -27,6 +27,12 @@ real screenshots without waiting for the user to ask, as defined by the skill.
 This UI screenshot requirement is explicit user policy, not a generic recipe;
 project policies may add evidence requirements but cannot silently omit it.
 
+Do not add assistant branding to branch/worktree names, commit messages/trailers,
+PR titles/bodies, or new tracked content. Use neutral names and verified user Git
+identity; never invent authorship. Preserve necessary technical references and
+required notices; do not rewrite existing history or change identity settings
+without explicit authorization.
+
 # First-Principles Completion Review
 
 Apply this review to every task, including non-coding work, before calling it done:

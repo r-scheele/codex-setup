@@ -17,6 +17,8 @@ Use one loop per task, with project-specific skills supplying domain rules. Load
 
 Keep production, data, credentials, paid-service, deployment, push, and sharing boundaries. Passing a quality gate grants none of those permissions. Preserve unrelated work and project test policies; do not invent approval gates for already-authorized work.
 
+**Do not add assistant branding to Git or PR output.** Use neutral task names for branches/worktrees. Exclude assistant/tool promotional labels, generated-by footers, and assistant co-author trailers from commit messages, PR titles/bodies, and new tracked content. Before authorized Git/PR publication, inspect the task's names, diff, messages/trailers, configured author/committer, and PR metadata. Use the existing verified user identity; never invent authorship. If it identifies an assistant, report that before committing. Preserve legitimate technical references, required licenses, and existing human attribution. Do not rewrite existing history, change identity settings, or force-push to remove old branding without explicit authorization. This rule never grants commit permission.
+
 ## Select the workspace once
 
 For repository implementation, use the chosen worktree and branch. If no choice has been established for this task, ask once whether to use the referenced previous task's exact worktree or a fresh task-specific worktree/branch. Follow [worktree.md](references/worktree.md) for initial setup or an unresolved selection. Verify the actual path/branch; chat attachment is not required. Continue and repair in that same worktree. Do not switch branches, add other implementation roots, or remove other worktrees/chats.

@@ -3,6 +3,7 @@
 Read the actual candidate and raw check results. Do not inherit author confidence. Keep scores from earlier rounds out of the review packet, but include all prior findings and dispositions. Reviewers do not modify the implementation. Report an independent review as unavailable if no separate context can be used.
 
 Focus checks on the changed risk:
+- Git/PR presentation: inspect new task names, diff, commit messages/trailers, author/committer identity, and PR metadata for assistant branding. Distinguish promotional attribution from necessary product/API references or legally required notices. Report existing history separately; never infer permission to commit, rewrite history, or falsify identity.
 - Correctness: acceptance criteria, sibling callers, boundary values, persistent state, regressions, errors mistaken for success.
 - Execution evidence: for UI tasks, inspect required real screenshots and observation bindings; missing/stale images leave the criterion unverified even when tests pass. Also inspect real check discovery/assertions, actual environment/version, realistic wrong implementations, mocks hiding the relevant failure, UI refresh/persistence and target/non-target roles when applicable.
 - Security: trust boundaries, auth versus authorization, tenant ownership, injection, secret/PII exposure, untrusted tool or document instructions. Inspect security implications even when no runtime security test is needed.
