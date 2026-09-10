@@ -9,11 +9,11 @@ Deliver the requested behavior with credible evidence. A score summarizes engine
 
 **Never create or amend a Git commit unless the user explicitly asks for that commit action.** Implementing, fixing, validating, completing the task, or passing the quality gate does not authorize a commit. Otherwise leave changes uncommitted. This rule applies to the lead and every subagent; include it in delegated task instructions.
 
-## One implementation chat, one new worktree and branch
+## One implementation task, one selected worktree and branch
 
-Before implementation edits, create a fresh task-specific Git worktree and a new branch, and attach the implementation chat to that worktree through supported host controls. A worktree newly provisioned for this chat already satisfies creation; create its new branch before edits if it starts detached. Do not reuse another task's checkout. For continuation, review, and repairs of this same task, keep its recorded worktree and branch rather than creating more.
+Before implementation edits, ask the user whether to continue in the exact worktree from the referenced previous task or create a fresh task-specific worktree and branch. Ask once even when one option appears likely; if the user already chose in the current request, use that answer without asking again. For continuation, review, and repairs of this same task, keep the selected worktree and branch rather than creating more.
 
-The chat must have that worktree as its sole implementation workspace. Shell `cd`, `git -C`, or `git worktree add` alone does not change the chat's workspace. Follow [worktree.md](references/worktree.md) to establish and verify the host association before assigning writers. If association cannot be established, report BLOCKED before implementation; do not silently work in the original checkout or create a replacement chat. Read-only reviews remain read-only and do not create worktrees.
+The selected worktree must be the task's sole implementation workspace. It does not need to be attached to the current chat through host controls. Follow [worktree.md](references/worktree.md) to select, create, and verify it before assigning writers. Read-only reviews remain read-only and do not create worktrees.
 
 Keep all implementation, tests, dev servers, file/review panels, and Codiff review pointed at this one worktree. Pass its absolute path and branch to every subagent, including the no-commit rule. Keep evidence outside the candidate snapshot in a task-specific location. Do not add the original checkout as a second implementation root, switch branches mid-task, or delete other worktrees/chats. Never create or amend a commit to set up isolation unless the user explicitly asks for that commit action.
 
