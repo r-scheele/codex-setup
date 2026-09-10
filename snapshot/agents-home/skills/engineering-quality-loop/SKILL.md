@@ -26,7 +26,7 @@ For an audit/review-only request, perform research and checks and report finding
 
 ## Bound the loop
 
-Defaults: initial candidate plus up to three repairs, 60 minutes, at most two concurrent subagents excluding the lead, one writer, no recursive delegation. Announce these defaults; an explicit user budget takes precedence. Stop if two successive candidates resolve no material finding and add no needed evidence. Do not spend cycles escalating missing credentials or permissions through stronger models. These are workflow limits, not a monetary spending cap.
+Defaults: initial candidate plus up to three repairs, 60 minutes, at most two concurrent subagents excluding the lead, one writer, no recursive delegation. Record the host-clock start time and deadline before delegation, and announce the limits; an explicit user budget takes precedence. Check the clock before each dispatch, repair, and wait. Bound waits by the remaining time. At the deadline, interrupt outstanding agents where supported and report BLOCKED with retained evidence; do not quietly extend the budget or start another repair. Apply an explicitly authorized extension to the deadline and state it. Stop if two successive candidates resolve no material finding and add no needed evidence. Do not spend cycles escalating missing credentials or permissions through stronger models. These are workflow limits, not a monetary spending cap.
 
 Use `PASS`, `NEEDS_REPAIR`, or `BLOCKED` accurately. At a limit, preserve the best verified candidate and report remaining work; never weaken the gate to finish. A disabled/missing reviewer blocks independent certification, but useful authorized implementation and checks can continue.
 
