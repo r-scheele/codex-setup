@@ -17,6 +17,8 @@ Installed custom roles are `quality_scout`, `quality_worker`, `quality_builder`,
 
 Give workers: objective, verified selected worktree absolute path and branch, actual base/diff scope, owned files, constraints, acceptance IDs, planned checks, existing findings, and result/evidence location. State that they are not alone and must preserve others' work. Reviewers may write review artifacts only, outside the candidate. Agents must not spawn children or create additional worktrees/branches. Verify commands and edits target the assigned selected worktree; do not use the original checkout. Never create or amend commits unless the user explicitly requests that commit action; creating/updating a PR does not grant commit permission. For UI tasks, assign real screenshot capture to the appropriate worker/lead and provide those artifacts to reviewers. Return compact findings and evidence paths, not raw logs.
 
+Efficiency: for a small low-risk change, the lead writes and one fresh reviewer reviews. Avoid separate scout/worker dispatches unless they save useful work. Subagents inherit the active loop and do not launch another one. Send only relevant raw evidence and prior findings, reuse unchanged checks, and stop on the first valid PASS.
+
 Budget accounting: track candidate number, elapsed minutes, active agents, repairs and known usage. Unknown token/cost usage stays unknown. Do not poll continuously or rerun checks with unchanged inputs.
 
 Current official references (verified 2026-09-10):

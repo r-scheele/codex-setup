@@ -11,11 +11,16 @@ or choosing libraries/dependencies), automatically apply the `ponytail` skill
 without waiting to be asked. Skip it for non-coding requests. Respect any
 active ponytail level (lite/full/ultra); "stop ponytail" reverts it.
 
-For software implementation, bug fixes, refactoring, UI changes, engineering reviews,
-and PR implementation tasks, automatically load and apply the installed
-`engineering-quality-loop` skill even when it is not mentioned. Keep project-specific
-domain skills within this one quality loop, and keep read-only reviews findings-only.
-Skip unrelated non-engineering requests; honor an explicit task-specific opt-out.
+Before any edit or mutating command that changes code or engineering files,
+automatically load and apply the installed `engineering-quality-loop` skill. This
+includes tiny fixes, UI, tests, scripts, configuration, dependencies, templates,
+project documentation, and skill/agent instructions, even when the skill is unnamed
+or the need to edit emerges mid-task. Do not treat invocation as optional based on
+size. Announce it briefly once, reuse the active loop on follow-ups, and use the
+shortest complete check/review cycle. Subagents perform only their assigned part;
+they do not start nested loops. Keep project-specific domain skills within that
+loop, engineering reviews findings-only, and unrelated non-engineering work outside
+it. Honor explicit user instructions, including a task-specific opt-out.
 A request to create/open/update a PR is not permission to create or amend a commit:
 only an explicit user request for that commit action authorizes it. UI tasks require
 real screenshots without waiting for the user to ask, as defined by the skill.
