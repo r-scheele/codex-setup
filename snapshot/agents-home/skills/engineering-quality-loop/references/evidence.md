@@ -3,6 +3,8 @@
 Use `python3 /absolute/path/to/engineering-quality-loop/scripts/quality.py --help`.
 Python 3.9+ and Git on macOS/Linux are required. No third-party Python packages are needed.
 
+Before implementation, capture baseline hashes or content for any protected/unchanged-file acceptance criteria. Include a preservation check or a reviewable baseline artifact in the plan; a candidate snapshot alone only proves current content.
+
 Create a plan outside the source root before checking. Keep the same plan across repair rounds; if the user's requirements change, start a new task and explain the change rather than silently weakening the gate.
 
 ```json

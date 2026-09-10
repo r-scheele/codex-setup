@@ -9,7 +9,7 @@ Deliver the requested behavior with credible evidence. A score summarizes engine
 
 ## Start with the real task
 
-1. Read the current request, accessible brief, applicable project instructions, current diff, and affected callers. Preserve unrelated work. Choose the actual task base for Git review, including relevant commits, staged/unstaged changes, and new files.
+1. Read the current request, accessible brief, applicable project instructions, current diff, and affected callers. Preserve unrelated work. Before any writer starts, capture a Git baseline or hash/content snapshot for files the task requires to stay unchanged; a post-implementation fingerprint cannot prove preservation. Choose the actual task base for Git review, including relevant commits, staged/unstaged changes, and new files.
 2. Map every explicit requirement to a stable acceptance ID and observable check. State risk, important invariants, and material unknowns. Research only uncertainties that affect a decision; use current primary documentation for external APIs/dependencies. Reuse verified repository patterns and database-owned names.
 3. Keep the current lead/model unless the user requests a switch. Delegate bounded work using [routing.md](references/routing.md). This skill requests one independent reviewer subagent for an implementation quality loop; use another worker only when that saves useful work. A reviewer must not have authored any candidate in this task. High-risk work requires a second distinct security/reliability specialist in addition to the senior reviewer. Use a fresh context with requirements, code, and raw evidence, without author self-scores, prior numeric grades, or suggested conclusions.
 
