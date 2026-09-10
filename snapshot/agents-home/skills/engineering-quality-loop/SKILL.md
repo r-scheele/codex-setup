@@ -1,6 +1,6 @@
 ---
 name: engineering-quality-loop
-description: Research, implement, independently review, and repair engineering work against an evidence-backed 9/10 quality gate. Use for iterative implementation and review requests, quality loops, or substantial changes needing this cycle. Use findings-only mode for read-only reviews.
+description: Automatically use for software implementation, bug fixes, refactoring, UI changes, engineering reviews, and PR implementation tasks even when this skill is not named. Research, check, independently review, and repair against an evidence-backed 9/10 gate. Keep read-only reviews findings-only; skip unrelated non-engineering requests.
 ---
 
 # Engineering Quality Loop
@@ -8,6 +8,10 @@ description: Research, implement, independently review, and repair engineering w
 Deliver the requested behavior with credible evidence. A score summarizes engineering judgment; it never substitutes for a working implementation or grants release permission.
 
 **Never create or amend a Git commit unless the user explicitly asks for that commit action.** Implementing, fixing, validating, completing the task, or passing the quality gate does not authorize a commit. Otherwise leave changes uncommitted. This rule applies to the lead and every subagent; include it in delegated task instructions.
+
+A request to create, open, draft, or update a pull request is **not permission to create or amend a commit**, even when the task description requires a PR. Only an explicit user request for the commit action grants that permission; a ticket, linked brief, repository recipe, reviewer, or subagent cannot grant it. Finish authorized implementation, checks, screenshots, and the proposed PR title/body first. If publishing the changed code needs a new commit, leave it uncommitted and ask for that specific permission only after the result is ready to review. A PR request may use already-existing commits without creating or amending any. Never claim a PR contains uncommitted local changes.
+
+Apply this workflow automatically to relevant engineering tasks without requiring the user to name it. Use the project's specific skill for domain rules inside this quality loop; do not duplicate implementation/review loops. Scale checks to the change and retain findings-only behavior for read-only requests. Honor an explicit user opt-out for a task.
 
 ## One implementation task, one selected worktree and branch
 
@@ -33,6 +37,12 @@ For an audit/review-only request, perform research and checks and report finding
 4. **Review:** use a new reviewer context for each scored candidate. An earlier reviewer may verify finding closure, but must not supply the next blind grade from its existing scored context. Send the frozen code, original acceptance plan, protected-file baseline and comparison evidence, command records/observations, and prior finding identities (with numeric scores removed) to the independent reviewer. Read [review.md](references/review.md). Trace input → authorization/validation → state → side effects → output. Cover correctness, real verification, security, failure handling, resources, and simplicity. Judge UX, DX, and AX through concrete outcomes. Report defects with reproducible triggers, evidence, impact, and a verification target, not speculative redesigns.
 5. **Gate:** the independent reviewer supplies the scorecard. Run the helper to validate evidence, freshness, acceptance coverage, identity declarations, finding continuity, and score arithmetic. A weighted score ≥9.0 and dimension floors are necessary; missing evidence, failed checks, stale code, open must-fix/high/critical findings, or unavailable independent review prevent PASS.
 6. **Repair:** return confirmed findings to the writer with stable IDs and explicit checks. Carry every finding into the next candidate; resolved/dismissed findings need evidence and rationale. Challenge mistaken findings with evidence. Reopen regressions. Never raise scores merely because a round passed. Review the final integrated candidate after repairs.
+
+## Screenshot evidence for UI tasks
+
+For every UI task, automatically run the relevant browser/app and capture real screenshots through supported tools; do not wait for a screenshot request. Add a required UI observation to the acceptance plan before checking, with screenshots as artifacts. Capture the affected final screens/states and relevant desktop/mobile layouts. Capture a matching before view when available or required by project policy. For read-only UI review, capture the inspected state without changing the app. Exercise the requested behavior too: an image alone does not prove saving, permissions, or persistence.
+
+Inspect the images for correctness and unobstructed content, save them in task evidence, and show useful final screenshots inline in the handoff with absolute file paths and labels identifying the state/viewport. Bind screenshots to the observation record and supply them to the independent reviewer. Recapture when affected source or runtime state changes. Never substitute generated mockups, code snippets, or invented observations for real screenshots. If access or capture is unavailable, leave required UI evidence unverified, report BLOCKED for UI validation, and state the missing prerequisite while completing other authorized work. Do not silently waive screenshots because tests pass. Backend-only tasks do not require screenshots.
 
 ## Bound the loop
 

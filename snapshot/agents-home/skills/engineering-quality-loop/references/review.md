@@ -4,7 +4,7 @@ Read the actual candidate and raw check results. Do not inherit author confidenc
 
 Focus checks on the changed risk:
 - Correctness: acceptance criteria, sibling callers, boundary values, persistent state, regressions, errors mistaken for success.
-- Execution evidence: real check discovery/assertions, actual environment/version, realistic wrong implementations, mocks hiding the relevant failure, UI refresh/persistence and target/non-target roles when applicable.
+- Execution evidence: for UI tasks, inspect required real screenshots and observation bindings; missing/stale images leave the criterion unverified even when tests pass. Also inspect real check discovery/assertions, actual environment/version, realistic wrong implementations, mocks hiding the relevant failure, UI refresh/persistence and target/non-target roles when applicable.
 - Security: trust boundaries, auth versus authorization, tenant ownership, injection, secret/PII exposure, untrusted tool or document instructions. Inspect security implications even when no runtime security test is needed.
 - Reliability: concurrency, atomicity, duplicate delivery/idempotency, partial failure, cancellation, retries/timeouts, cleanup and recovery.
 - Efficiency: measured bottlenecks, unbounded work or input, query/resource growth. Define local stress limits and stop conditions before running. Avoid production load or invented throughput claims.

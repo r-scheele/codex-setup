@@ -48,6 +48,8 @@ Capture screenshots or browser/API transcripts through supported tools, then rec
 python3 /path/to/quality.py check --run /path/to/evidence/round-1 --id browser_save --artifact /path/to/evidence/browser.txt --artifact /path/to/evidence/save.png --note "Exact steps, environment, and observed outcome" --outcome pass
 ```
 
+For UI tasks, include a required observation with real screenshot artifacts; a transcript alone is insufficient. Record the app/URL, viewport, relevant state, and candidate context in the note. Include the images in the reviewer packet and show final screenshots to the user. Missing screenshots block UI validation; do not drop that requirement from the plan.
+
 Observation provenance is explicitly operator-entered. The reviewer must inspect the artifacts and actual tool activity; the helper does not certify that a browser interaction happened.
 
 3. Give the reviewer the plan, candidate, relevant diff/source, logs/artifacts, and prior findings stripped of scores. The reviewer writes `review.json` in the round directory. Keep its actual returned transcript alongside it. Required format:

@@ -11,6 +11,15 @@ or choosing libraries/dependencies), automatically apply the `ponytail` skill
 without waiting to be asked. Skip it for non-coding requests. Respect any
 active ponytail level (lite/full/ultra); "stop ponytail" reverts it.
 
+For software implementation, bug fixes, refactoring, UI changes, engineering reviews,
+and PR implementation tasks, automatically load and apply the installed
+`engineering-quality-loop` skill even when it is not mentioned. Keep project-specific
+domain skills within this one quality loop, and keep read-only reviews findings-only.
+Skip unrelated non-engineering requests; honor an explicit task-specific opt-out.
+A request to create/open/update a PR is not permission to create or amend a commit:
+only an explicit user request for that commit action authorizes it. UI tasks require
+real screenshots without waiting for the user to ask, as defined by the skill.
+
 # First-Principles Completion Review
 
 Apply this review to every task, including non-coding work, before calling it done:

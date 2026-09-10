@@ -2,3 +2,6 @@ interface:
   display_name: "Engineering Quality Loop"
   short_description: "Implement, review, and repair with real evidence"
   default_prompt: "Use $engineering-quality-loop to complete this task with independent review, real checks, and an evidence-backed 9/10 gate."
+
+policy:
+  allow_implicit_invocation: true
