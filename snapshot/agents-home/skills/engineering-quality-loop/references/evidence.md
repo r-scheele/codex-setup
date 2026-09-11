@@ -48,7 +48,9 @@ Capture screenshots or browser/API transcripts through supported tools, then rec
 python3 /path/to/quality.py check --run /path/to/evidence/round-1 --id browser_save --artifact /path/to/evidence/browser.txt --artifact /path/to/evidence/save.png --note "Exact steps, environment, and observed outcome" --outcome pass
 ```
 
-For UI tasks, include a required observation with real screenshot artifacts; a transcript alone is insufficient. Record the app/URL, viewport, relevant state, and candidate context in the note. Include the images in the reviewer packet and show final screenshots to the user. Missing screenshots block UI validation; do not drop that requirement from the plan.
+For UI tasks, include a required observation with real screenshots captured by a supported browser/app tool. Prefer saved image artifacts. When the active tool can emit a real screenshot inline but cannot save it, bind a concise manifest or browser transcript as the artifact and record the app/URL, viewport, relevant state, candidate context, and successful inline capture in the note. Include the emitted image and tool activity in the reviewer packet and show useful final screenshots to the user. A transcript without an actual captured image remains insufficient.
+
+Choose device coverage from the changed risk: require mobile screenshots for responsive/layout changes, explicit user requirements, or project policy, not for every UI task by default. A locked native desktop does not fail the observation when another supported surface can exercise and capture the same required state. Missing evidence blocks only the criterion it is actually needed to prove; do not weaken explicit acceptance requirements because a surface is unavailable.
 
 Observation provenance is explicitly operator-entered. The reviewer must inspect the artifacts and actual tool activity; the helper does not certify that a browser interaction happened.
 
