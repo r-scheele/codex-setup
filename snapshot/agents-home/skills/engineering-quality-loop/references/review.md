@@ -9,7 +9,7 @@ Focus checks on the changed risk:
 - Security: trust boundaries, auth versus authorization, tenant ownership, injection, secret/PII exposure, untrusted tool or document instructions. Inspect security implications even when no runtime security test is needed.
 - Reliability: concurrency, atomicity, duplicate delivery/idempotency, partial failure, cancellation, retries/timeouts, cleanup and recovery.
 - Efficiency: measured bottlenecks, unbounded work or input, query/resource growth. Define local stress limits and stop conditions before running. Avoid production load or invented throughput claims.
-- Simplicity: duplicated rules, hardcoded database-owned values, swallowed errors, sleeps for synchronization, unnecessary dependencies/abstractions, symptom patches. Recommend the smallest change that preserves guarantees; leave good work alone.
+- Simplicity: perform a focused duplication audit over the complete changed flow. Search newly introduced identifiers, routes, labels, permission predicates, handlers, and equivalent sibling implementations. When responsive, tenant, role, caller, or similar variants implement the same behavior, require one shared source of truth unless separate definitions are technically necessary and the review records why. Cite the searches and code locations in the simplicity rationale; unexplained duplicated behavior is a must-fix finding. Also inspect hardcoded database-owned values, swallowed errors, sleeps for synchronization, unnecessary dependencies/abstractions, and symptom patches. Recommend the smallest change that preserves guarantees; leave good work alone.
 
 | Dimension key | Weight | Floor |
 |---|---:|---:|
