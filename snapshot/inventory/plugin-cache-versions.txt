@@ -2,7 +2,7 @@ i-have-adhd/i-have-adhd/0.3.0
 openai-bundled/browser/26.908.40834
 openai-bundled/codex-app-tools/0.1.4
 openai-bundled/computer-use/1.0.1000968
-openai-bundled/sites/0.1.66
+openai-bundled/sites/0.1.70
 openai-bundled/unified-computer-use/26.908.40834
 openai-bundled/visualize/1.0.37
 openai-curated-remote/alpaca/1.0.0
