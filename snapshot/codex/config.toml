@@ -559,6 +559,9 @@ trust_level = "trusted"
 [projects."__HOME__/Documents/Codex/2026-09-13/01a07115-1172-7190-9859-30549f0ef8d8-i"]
 trust_level = "trusted"
 
+[projects."__HOME__/Documents/Codex/2026-09-15/codex-threads-01a070ed-d3b1-7a22-9831"]
+trust_level = "trusted"
+
 [hooks.state]
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:session_start:0:0"]
