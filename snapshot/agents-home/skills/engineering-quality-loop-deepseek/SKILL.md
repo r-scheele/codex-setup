@@ -1,6 +1,6 @@
 ---
 name: engineering-quality-loop-deepseek
-description: The engineering quality loop rewritten for DeepSeek-family sessions: explicit phases, an on-disk acceptance plan, frozen evidence, an independent scored review, and the 9/10 gate. Use before any code or engineering-file change (fixes, refactors, UI, tests, scripts, config, dependencies, project docs, skill or agent instructions) when the session runs a DeepSeek model; use engineering-quality-loop instead for GPT-family sessions. Read-only tasks stay findings-only.
+description: The engineering quality loop rewritten for DeepSeek-family sessions, with explicit phases, an on-disk acceptance plan, frozen evidence, an independent scored review, and the 9/10 gate. Use before any code or engineering-file change (fixes, refactors, UI, tests, scripts, config, dependencies, project docs, skill or agent instructions) when the session runs a DeepSeek model; use engineering-quality-loop instead for GPT-family sessions. Read-only tasks stay findings-only.
 ---
 
 # Engineering Quality Loop (DeepSeek)
