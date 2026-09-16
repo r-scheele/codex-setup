@@ -1,0 +1,7 @@
+interface:
+  display_name: "Engineering Quality Loop (DeepSeek)"
+  short_description: "Explicit phases, frozen evidence, 9/10 gate"
+  default_prompt: "Use $engineering-quality-loop-deepseek to complete this task with an explicit on-disk plan, real checks, an independent scored review, and the 9/10 gate."
+
+policy:
+  allow_implicit_invocation: true
