@@ -1,6 +1,6 @@
 ---
 name: engineering-quality-loop-deepseek
-description: The engineering quality loop rewritten for DeepSeek-family sessions, with explicit phases, an on-disk acceptance plan, frozen evidence, an independent scored review, and the 9/10 gate. Use before any code or engineering-file change (fixes, refactors, UI, tests, scripts, config, dependencies, project docs, skill or agent instructions) when the session runs a DeepSeek model; use engineering-quality-loop instead for GPT-family sessions. Read-only tasks stay findings-only.
+description: Run the full engineering quality loop on DeepSeek models, the way the GPT loop runs only on GPT models. Explicit phases, an on-disk acceptance plan, frozen evidence, an independent scored DeepSeek review, and the 9/10 gate. Use before any code or engineering-file change (fixes, refactors, UI, tests, scripts, config, dependencies, project docs, skill or agent instructions) when the session runs DeepSeek; use engineering-quality-loop instead for GPT-family sessions. Read-only tasks stay findings-only.
 ---
 
 # Engineering Quality Loop (DeepSeek)
@@ -12,6 +12,21 @@ confidently than their evidence supports.
 
 Use this skill **instead of** `engineering-quality-loop` when the session is running a
 DeepSeek model. Do not run both loops on one task.
+
+## DeepSeek models only
+
+Every role in this loop runs a DeepSeek model: the lead, each writer, and each independent
+reviewer. The original loop routes its roles only to GPT models, and this variant keeps the
+same shape for DeepSeek. Do not swap in another model family to manufacture reviewer
+independence or to work around a quota.
+
+Choose the least expensive adequate DeepSeek model for the judgment required, never invent
+an unavailable model, and record requested versus observed model plus the actual agent ID.
+Independence comes from a fresh context with no inherited author history and a distinct
+identity, not from the family name, so a DeepSeek reviewer on a different tier is the normal
+pattern. Read [references/routing.md](references/routing.md) before dispatching any worker or
+reviewer. If no DeepSeek model is callable on the host, report the affected roles as
+unstaffed instead of quietly routing to another family.
 
 ## Activate before changes
 
@@ -177,23 +192,13 @@ The reviewer record must contain: `candidate_id`, `reviewer` (`id`, `model`,
 `evidence`, and `rationale` for all six keys. The reviewer sets its own scores from the
 evidence; scores from earlier rounds stay out of the packet.
 
-Route work by the judgment required, using only models the host actually offers:
-
-| Assignment | Model | Effort |
-|---|---|---|
-| Focused lookup, mechanical edit | deepseek-v4-flash | low |
-| Specified implementation or repair | deepseek-v4-flash | high |
-| Ordinary integration | deepseek-v4-pro | high |
-| Difficult diagnosis or implementation | deepseek-v4-pro | max |
-| Independent review | deepseek-v4-pro | high |
-| Second specialist on high-risk work | deepseek-v4-pro | max |
-
-Independence comes from a fresh context, not from the label in the JSON. Prefer a different
-model for the reviewer when the host offers one, since it removes shared failure modes. If
-the reviewer must run on DeepSeek too, start it with no inherited turns, give it only the
-raw artifacts, and record requested versus observed model. High-risk work needs a second
-distinct non-author reviewer with an explicit focus. A single reviewer on a high-risk
-change, or any missing independent review, cannot pass. Review depth and grading anchors:
+Route the reviewer with [references/routing.md](references/routing.md) within DeepSeek:
+start it on a fresh context with no inherited author turns, give it only the raw artifacts,
+and hold a different identity and preferably a different tier from the author. Independence
+comes from the fresh context and distinct identity, not from the label in the JSON.
+High-risk work needs a second distinct non-author reviewer with an explicit focus. A single
+reviewer on a high-risk change, or any missing independent review, cannot pass. Review depth
+and grading anchors:
 [review.md](__HOME__/.agents/skills/engineering-quality-loop/references/review.md).
 
 ## UI evidence is required
@@ -248,6 +253,11 @@ model family. Read them only when the task needs them:
 - Evidence schemas: `__HOME__/.agents/skills/engineering-quality-loop/references/evidence.md`
 - Review grading: `__HOME__/.agents/skills/engineering-quality-loop/references/review.md`
 - Worktree setup: `__HOME__/.agents/skills/engineering-quality-loop/references/worktree.md`
+
+Kept local to this variant because it differs by model family:
+
+- DeepSeek routing: `references/routing.md` (the original's `routing.md` is GPT-only and must
+  not be used here)
 
 If the helper or those references are missing, say so and continue with the equivalent
 manual checks rather than claiming the gate passed.
