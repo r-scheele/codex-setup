@@ -1,5 +1,6 @@
 i-have-adhd/i-have-adhd/0.3.0
 openai-bundled/codex-app-tools/0.1.4
+openai-bundled/plugin-install-aFtCGr/browser
 openai-bundled/visualize/1.0.37
 openai-curated-remote/github/0.1.12-5f7cd798dc99
 openai-curated-remote/plugin-management/0.1.0

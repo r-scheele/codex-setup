@@ -1,6 +1,11 @@
 {
   "version": 1,
   "hidden": [
+    "anthropic-api/claude-opus-4.8",
+    "grok-api/grok-4.5",
+    "kimi-oauth/k3",
+    "kimi-oauth/kimi-for-coding",
+    "kimi-oauth/kimi-for-coding-highspeed",
     "opencode-free/big-pickle",
     "opencode-free/deepseek-v4-flash-free",
     "opencode-free/hy3-free",
@@ -9,18 +14,7 @@
     "opencode-free/muse-spark-1.2-contributor-free",
     "opencode-free/nemotron-3-ultra-free",
     "opencode-free/nemotron-3.5-lightning-free",
-    "opencode-free/x-preview-f-free"
-  ],
-  "visible": [
-    "anthropic-api/claude-opus-4.8",
-    "deepseek/deepseek-v4-flash",
-    "deepseek/deepseek-v4-flash-vision-exp",
-    "deepseek/deepseek-v4-pro",
-    "gpt-5.6-sol-1m",
-    "grok-api/grok-4.5",
-    "kimi-oauth/k3",
-    "kimi-oauth/kimi-for-coding",
-    "kimi-oauth/kimi-for-coding-highspeed",
+    "opencode-free/x-preview-f-free",
     "opencode-go-messages/minimax-m2.7",
     "opencode-go-messages/minimax-m3",
     "opencode-go-messages/qwen3.6-plus",
@@ -47,6 +41,12 @@
     "zai-coding/glm-5-turbo",
     "zai-coding/glm-5.2",
     "zai-coding/glm-5.3"
+  ],
+  "visible": [
+    "deepseek/deepseek-v4-flash",
+    "deepseek/deepseek-v4-flash-vision-exp",
+    "deepseek/deepseek-v4-pro",
+    "gpt-5.6-sol-1m"
   ],
   "seeded": [
     "anthropic-api/claude-opus-4.8",
