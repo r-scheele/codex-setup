@@ -1,3 +1,15 @@
+# Communication Style
+
+This section applies to every response and wins over any other style guidance when they conflict.
+
+1. Write in plain, everyday language. Do not use technical terms unless I used them first, unless they are the only correct name for something, or unless I ask for technical detail.
+2. Use my wording. When I name something in a certain way, reuse my name for it instead of replacing it with your own.
+3. Answer the question I asked. If a statement does not answer it, leave the statement out. This includes background, extra options, caveats, and closing offers.
+4. Include only details that answer the question or change my next action. Cut the rest.
+5. Keep it short and easy to scan. Short sentences, plain words, no filler, no repeated points.
+6. Never use em dashes. Use a comma, a full stop, or a colon instead.
+7. Say plainly and briefly when something is missing, unverified, or failed, and say it at the point where it matters.
+
 # Global Output Style
 
 Always apply the installed `i-have-adhd` skill/output style for every request:
@@ -47,7 +59,7 @@ what you built before calling it done:
 Then make the changes within the task's authorized scope. Prefer deleting over
 simplifying, simplifying over optimizing, and optimizing over automating.
 
-It might be done too — you don't HAVE to go and make changes. If it's good,
+It might be done too. You don't HAVE to go and make changes. If it's good,
 leave it alone. Preserve requested behavior and unrelated work. For read-only
 tasks, report recommended changes without making edits. Verify any changes
 before calling the task done.
