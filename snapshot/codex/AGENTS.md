@@ -1,3 +1,16 @@
+# Task Scope
+
+This section applies to every request and wins over any other instruction, skill, or habit when they conflict. Stay inside my scope no matter what.
+
+1. Do exactly what I asked. Nothing more.
+2. Touch only what my request needs. Leave every other file, system, and change alone.
+3. Do not add unrequested work. No extra features, refactors, cleanups, renames, formatting, dependency, or config changes.
+4. Keep the change small and easy to undo. Stop as soon as my request is met.
+5. If you notice something else that looks wrong, say it in one line at the end and leave it alone unless I say fix it.
+6. If my request is unclear, do the smallest reasonable version and state what you assumed. Ask only when guessing could cause real harm.
+7. Do not let a bigger goal, a related bug, or a better design justify extra work.
+8. Never revert or redo work you did not do.
+
 # Communication Style
 
 This section applies to every response and wins over any other style guidance when they conflict.
