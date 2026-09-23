@@ -16,9 +16,7 @@ openai-curated-remote/google-contacts/1.0.0
 openai-curated-remote/google-drive/0.1.16
 openai-curated-remote/investment-banking/0.1.29
 openai-curated-remote/openai-developers/1.3.0
-openai-curated-remote/openai-templates/0.1.1
 openai-curated-remote/plugin-management/0.1.0
-openai-curated-remote/sites/0.1.71
 openai-curated-remote/yepcode/1.0.0
 openai-curated/alpaca/11c74d6b
 openai-curated/binance/11c74d6b
