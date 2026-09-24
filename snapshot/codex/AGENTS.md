@@ -31,6 +31,42 @@ state when useful, make progress visible, and end with one concrete next step.
 
 # Automatic Skill Routing
 
+## Unlazy for every task and follow-up
+
+Always apply the installed `unlazy` skill at
+`__HOME__/.agents/skills/unlazy/SKILL.md` to every request in Codex and
+ChatGPT Work wherever these local instructions are loaded, including coding,
+research, writing, questions, reviews, and non-coding work. Do not wait for me to
+name it. Load it at the start of a task and keep it active for every follow-up,
+correction, retry, resumed task, and continuation after compaction. Reuse the
+loaded skill and task state; reload them if that context is missing. This rule
+does not expire after one response. An explicit task-specific opt-out wins.
+
+Apply unlazy's smallest fitting mode: trivial edits and factual replies get a
+completion check without a gates file or extra agents; substantial work gets
+explicit acceptance gates and evidence. Reconcile each follow-up with the current
+request, update affected gates, preserve unfinished requirements, and reverify
+affected outcomes before claiming completion. Never report partial or blocked
+work as done. For delegated work, pass these completion requirements to each
+agent and verify its returned work.
+
+Keep one task workflow. For engineering work, use unlazy alongside
+`engineering-quality-loop`, reuse its acceptance criteria and evidence in the
+unlazy ledger, and keep its independent review and 9/10 gate. Preserve the
+cost-conscious model routing, time/concurrency limits, and no-recursive-delegation
+rule. Do not multiply budgets, add agents, repeat unchanged checks, or polish
+beyond the requested outcome merely to satisfy a generic depth/pass recipe.
+Ponytail governs implementation simplicity; it must not omit requested work.
+
+The scope, communication, authorization, and project verification rules in this
+file still apply. Inspect gate commands and their called scripts before running
+them. Existing task authorization covers necessary, understood, reversible
+checks; unlazy does not grant permission for commits, publication, destructive
+actions, external messages, or other actions requiring separate authorization.
+Do not install optional hooks automatically. Local installation is not proof of
+activation in separate web, cloud, remote-host, or already-running sessions;
+report missing access or activation honestly.
+
 For any coding task (writing, changing, fixing, reviewing, or designing code,
 or choosing libraries/dependencies), automatically apply the `ponytail` skill
 without waiting to be asked. Skip it for non-coding requests. Respect any
