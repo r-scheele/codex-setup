@@ -11,7 +11,7 @@ sandbox_mode = "danger-full-access"
 
 
 
-model = "gpt-6-astra"
+model = "deepseek/deepseek-v4-flash"
 # BEGIN codex-router-managed
 openai_base_url = "http://127.0.0.1:4202/_codex-router/__CODEX_ROUTER_CALLER_SECRET__/v1"
 model_catalog_json = "__HOME__/.codex/codex-router/merged-models.json"
