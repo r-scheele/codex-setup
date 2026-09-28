@@ -8,7 +8,6 @@ openai-curated-remote/apollo/5.0.0
 openai-curated-remote/binance/5.0.1
 openai-curated-remote/biorender/2.0.1
 openai-curated-remote/cloudflare/0.1.2
-openai-curated-remote/fiscal-ai/2.0.0
 openai-curated-remote/github/0.1.12-5f7cd798dc99
 openai-curated-remote/gmail/0.1.10
 openai-curated-remote/google-calendar/1.2.7
@@ -19,7 +18,6 @@ openai-curated-remote/openai-developers/1.3.0
 openai-curated-remote/openai-templates/0.1.1
 openai-curated-remote/plugin-management/0.1.0
 openai-curated-remote/sites/0.1.71
-openai-curated-remote/yepcode/1.0.0
 openai-curated/alpaca/11c74d6b
 openai-curated/binance/11c74d6b
 openai-curated/biorender/11c74d6b
