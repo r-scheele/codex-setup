@@ -11,13 +11,8 @@ sandbox_mode = "danger-full-access"
 
 
 
-model = "deepseek/deepseek-v4-flash"
-# BEGIN codex-router-managed
-openai_base_url = "http://127.0.0.1:4202/_codex-router/__CODEX_ROUTER_CALLER_SECRET__/v1"
-model_catalog_json = "__HOME__/.codex/codex-router/merged-models.json"
-experimental_realtime_webrtc_call_base_url = "https://chatgpt.com/backend-api/codex"
-experimental_realtime_ws_base_url = "https://api.openai.com/v1"
-# END codex-router-managed
+
+model = "gpt-5.6-sol"
 
 [model_providers.omniroute]
 name = "OmniRoute (local)"
@@ -174,9 +169,6 @@ js_repl = false
 
 
 
-# BEGIN codex-router-multi-agent-v2-managed
-multi_agent_v2 = { enabled = true, max_concurrent_threads_per_session = 6, expose_spawn_agent_model_overrides = true, usage_hint_enabled = true, root_agent_usage_hint_text = "When a child agent finishes (FINAL_ANSWER, task_complete, or an idle/errored wait snapshot), call interrupt_agent on that child so Codex can mark it done. Do not leave finished children in the working state." }
-# END codex-router-multi-agent-v2-managed
 
 [mcp_servers.muonry]
 command = "__HOME__/bin/muonry"
@@ -627,11 +619,3 @@ NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ec
 
 [apps.connector_5f3c8c41a1e54ad7a76272c89e2554fa.tools."google_drive.copy_file"]
 approval_mode = "approve"
-
-# BEGIN codex-router-provider-managed
-[model_providers.codex-router]
-name = "Codex Router (external models)"
-base_url = "http://127.0.0.1:4202/_codex-router/__CODEX_ROUTER_CALLER_SECRET__/v1"
-wire_api = "responses"
-supports_standalone_web_search = true
-# END codex-router-provider-managed
