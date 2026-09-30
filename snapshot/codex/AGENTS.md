@@ -154,6 +154,10 @@ Use the actual tools and schemas supplied by the running session. Legacy tool na
 
 - Never hardcode names, labels, or identifier lists in application logic when they already exist in the database. Load them from the owning model and derive UI options from those records. Static names are allowed only in tests, fixtures, or explicit external protocol constants.
 
+# Automatic Graphify Use
+
+For every task in a code repository, invoke `$graphify` before inspecting source. Query an existing `graphify-out/graph.json`; if it is missing or stale, build or update the graph with local code extraction before continuing. Treat graph results as navigation only and verify conclusions against current files. After changing code, run `graphify update .` to keep the graph current. Do not request credentials or send source to a hosted model just to build a code graph.
+
 # Worktree Review With Codiff
 
 Use the installed `codiff` skill and open Codiff only when the user explicitly asks to use it. Ordinary implementation, review, PR, or handoff requests do not authorize opening Codiff. When requested, open the exact active worktree and refresh its narrative walkthrough for the requested review. Explain what changed, why, and the verification results using the implementation conversation and actual diff. Cover the task's complete changes, including relevant commits, staged changes, unstaged changes, and new files; choose the actual task base instead of assuming `main` or showing only the staged subset. Preserve and distinguish unrelated user changes.
