@@ -1,6 +1,6 @@
 model_verbosity = "low"
 notify = ["__HOME__/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
-model_reasoning_effort = "high"
+model_reasoning_effort = "medium"
 approval_policy = "never"
 approvals_reviewer = "user"
 sandbox_mode = "danger-full-access"
@@ -12,7 +12,7 @@ sandbox_mode = "danger-full-access"
 
 
 
-model = "gpt-5.6-sol"
+model = "gpt-6-sol"
 
 [model_providers.omniroute]
 name = "OmniRoute (local)"
