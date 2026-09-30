@@ -156,7 +156,7 @@ Use the actual tools and schemas supplied by the running session. Legacy tool na
 
 # Automatic Graphify Use
 
-For every task in a code repository, invoke `$graphify` before inspecting source. Query an existing `graphify-out/graph.json`; if none exists, build a local code graph only when the task needs cross-file or architectural context. After changing code in a repository with an existing graph, run `graphify update .`; inspect errors or unexpected node drops before relying on the result, and do not use `--force` without confirming the deletions. For a self-contained one-file task with no graph, skip the build. Treat graph results as navigation and verify conclusions against current files. Do not request credentials or send source to a hosted model just to build a code graph.
+For every task in a code repository, invoke `$graphify` before inspecting source. Use Graphify when a graph exists or cross-file context is needed; for a self-contained one-file task with no graph, skip building. Before querying an existing graph, refresh it with `graphify update .`; if extraction fails or the graph shrinks, verify the cause and only force an overwrite after confirming intended deletions. Refresh after code changes only when Graphify was used in that task. Treat graph results as navigation and verify conclusions against current files. Do not request credentials or send source to a hosted model just to build a code graph.
 
 # Worktree Review With Codiff
 
