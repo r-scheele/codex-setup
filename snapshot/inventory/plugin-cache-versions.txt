@@ -3,6 +3,7 @@ openai-bundled/browser/26.928.31416
 openai-bundled/code-review/26.928.31416
 openai-bundled/codex-app-tools/0.1.5
 openai-bundled/computer-use/1.0.1001281
+openai-bundled/plugin-install-UbTx7D/browser
 openai-bundled/unified-computer-use/26.928.31416
 openai-bundled/visualize/1.0.45
 openai-curated-remote/apollo/5.0.0
