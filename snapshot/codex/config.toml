@@ -219,7 +219,7 @@ cwd = "."
 enabled = false
 
 [desktop]
-conversationDetailMode = "STEPS_COMMANDS"
+conversationDetailMode = "STEPS_PROSE"
 ambient-suggestions-enabled = true
 keepRemoteControlAwakeWhilePluggedIn = true
 show-context-window-usage = false
