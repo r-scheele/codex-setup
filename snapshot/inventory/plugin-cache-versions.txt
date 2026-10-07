@@ -1,4 +1,4 @@
-i-have-adhd/i-have-adhd/0.3.0
+i-have-adhd/i-have-adhd/0.4.1
 openai-bundled/browser/26.930.61225
 openai-bundled/code-review/26.930.61225
 openai-bundled/codex-app-tools/0.1.5
