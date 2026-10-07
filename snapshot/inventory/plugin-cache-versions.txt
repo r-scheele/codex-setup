@@ -1,9 +1,10 @@
 i-have-adhd/i-have-adhd/0.4.1
-openai-bundled/browser/26.930.61225
+openai-bundled/browser/26.1002.52244
 openai-bundled/code-review/26.930.61225
 openai-bundled/codex-app-tools/0.1.5
 openai-bundled/computer-use/1.0.1001365
-openai-bundled/unified-computer-use/26.930.61225
+openai-bundled/plugin-install-0dHfCF/computer-use
+openai-bundled/unified-computer-use/26.1002.52244
 openai-bundled/visualize/1.0.46
 openai-curated-remote/apollo/5.0.0
 openai-curated-remote/binance/5.0.1
