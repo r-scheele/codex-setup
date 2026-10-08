@@ -13,6 +13,7 @@ sandbox_mode = "danger-full-access"
 
 
 model = "gpt-6-astra"
+service_tier = "priority"
 
 [model_providers.omniroute]
 name = "OmniRoute (local)"
