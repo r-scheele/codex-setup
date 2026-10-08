@@ -163,3 +163,24 @@ For every task in a code repository, invoke `$graphify` before inspecting source
 Use the installed `codiff` skill and open Codiff only when the user explicitly asks to use it. Ordinary implementation, review, PR, or handoff requests do not authorize opening Codiff. When requested, open the exact active worktree and refresh its narrative walkthrough for the requested review. Explain what changed, why, and the verification results using the implementation conversation and actual diff. Cover the task's complete changes, including relevant commits, staged changes, unstaged changes, and new files; choose the actual task base instead of assuming `main` or showing only the staged subset. Preserve and distinguish unrelated user changes.
 
 The skill is at `__HOME__/.codex/skills/codiff/SKILL.md`; the terminal command is `codiff`. Prefer authoring the walkthrough in the current session through the skill. Keep reviews local unless the user explicitly requests sharing or uploading. Opening a review does not authorize commits, pushes, PR comments, or merges. Continue authorized implementation without requiring a plan-approval handoff. Codiff supplements required tests and browser QA. If it is unavailable, report the limitation and continue verification using the actual Git diff.
+
+<!-- codedb:begin v0.2.5860 -->
+## codedb — code intelligence policy
+
+codedb is a code-intelligence and context tool — not your editor. Reach for the
+codedb MCP tools FIRST, before shell search or bulk file reads:
+
+- `codedb_context` to orient on a new task before reading anything else.
+- `codedb_explain` for a known symbol (definition body + callers), `codedb_callpath`
+  for the shortest A→B chain, `codedb_list_dir` for a folder, `codedb_status` for
+  index health.
+- Hop tools (`codedb_symbol` / `codedb_callers` / `codedb_search` / `codedb_outline`)
+  still dispatch if you already know them — they are not the opening menu.
+- Make edits with your own native editor tools. codedb is the navigation layer,
+  not the editor.
+- If codedb reports no index or a stale one, run `codedb <root> index` and fall
+  back to `rg`/`cat` until it completes.
+
+Managed by `codedb codex install` — edits inside this block are overwritten.
+Remove it with `codedb codex uninstall`.
+<!-- codedb:end -->
