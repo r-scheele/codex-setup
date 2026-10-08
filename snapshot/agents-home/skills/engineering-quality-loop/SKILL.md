@@ -47,7 +47,7 @@ A locked native desktop is an environment limitation, not an automatic blocker. 
 
 ## Stop within bounds
 
-Default maximum: four evaluated candidates, 60 minutes, two concurrent subagents excluding the lead, one writer, no recursive delegation. Record host start/deadline before delegation and announce limits; a user budget takes precedence. Check time before dispatch, repair, and waits; bound waits by remaining time. At deadline, interrupt pending agents where supported, retain evidence, and report BLOCKED. Never silently extend the budget. Stop after two candidates without meaningful progress. Missing access or tools are blockers, not reasons to keep escalating models.
+Default maximum: four evaluated candidates, two concurrent subagents excluding the lead, one writer, no recursive delegation. There is no default time limit. Record the host start before delegation and announce these limits. If the user sets a time budget, record its deadline, check time before dispatch, repair, and waits, and bound waits by remaining time. At that deadline, interrupt pending agents where supported, retain evidence, and report BLOCKED. Never silently extend a user-set budget. Stop after two candidates without meaningful progress. Missing access or tools are blockers, not reasons to keep escalating models.
 
 Use PASS, NEEDS_REPAIR, and BLOCKED honestly. Missing independent review or required evidence cannot pass. Keep useful completed work and report remaining gaps.
 
