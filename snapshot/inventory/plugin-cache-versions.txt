@@ -9,7 +9,7 @@ openai-curated-remote/github/0.1.12-5f7cd798dc99
 openai-curated-remote/gmail/0.1.10
 openai-curated-remote/google-calendar/1.2.7
 openai-curated-remote/google-contacts/1.0.0
-openai-curated-remote/google-drive/0.1.16
+openai-curated-remote/google-drive/0.1.20
 openai-curated-remote/openai-templates/0.1.1
 openai-curated-remote/pages/0.1.21
 openai-curated-remote/plugin-management/0.1.0
