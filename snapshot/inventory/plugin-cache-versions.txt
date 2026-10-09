@@ -6,6 +6,7 @@ openai-bundled/computer-use/1.0.1001394
 openai-bundled/unified-computer-use/26.1002.52244
 openai-bundled/visualize/1.0.47
 openai-curated-remote/github/0.1.12-5f7cd798dc99
+openai-curated-remote/gmail/0.1.10
 openai-curated-remote/google-drive/0.1.16
 openai-curated-remote/openai-templates/0.1.1
 openai-curated-remote/plugin-management/0.1.0
