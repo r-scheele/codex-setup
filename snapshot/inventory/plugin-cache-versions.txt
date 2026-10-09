@@ -13,7 +13,7 @@ openai-curated-remote/google-drive/0.1.16
 openai-curated-remote/openai-templates/0.1.1
 openai-curated-remote/pages/0.1.21
 openai-curated-remote/plugin-management/0.1.0
-openai-curated-remote/sites/1.0.1
+openai-curated-remote/sites/1.0.0
 openai-curated-remote/work-pets/0.1.6
 openai-curated-remote/write-like-me/0.1.1
 openai-curated/alpaca/11c74d6b
