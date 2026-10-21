@@ -1,6 +1,5 @@
 i-have-adhd/i-have-adhd/0.4.1
 openai-bundled/browser/26.1016.51333
-openai-bundled/code-review/26.1016.51333
 openai-bundled/codex-app-tools/0.1.6
 openai-bundled/computer-use/1.0.1001540
 openai-bundled/unified-computer-use/26.1016.51333
