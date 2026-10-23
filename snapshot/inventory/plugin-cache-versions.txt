@@ -6,6 +6,7 @@ openai-bundled/computer-use/1.0.1001540
 openai-bundled/unified-computer-use/26.1016.62342
 openai-bundled/visualize/1.0.55
 openai-curated-remote/apollo/5.0.0
+openai-curated-remote/app-6a314a73f8ac819195b0d55e36b9c609/2.8.0
 openai-curated-remote/binance/5.0.1
 openai-curated-remote/biorender/2.0.1
 openai-curated-remote/fiscal-ai/3.0.0
