@@ -8,6 +8,7 @@ openai-curated-remote/apollo/5.0.0
 openai-curated-remote/app-6a314a73f8ac819195b0d55e36b9c609/2.8.0
 openai-curated-remote/binance/5.0.1
 openai-curated-remote/biorender/2.0.1
+openai-curated-remote/figma/16.0.0
 openai-curated-remote/fiscal-ai/3.0.0
 openai-curated-remote/github/0.1.12-5f7cd798dc99
 openai-curated-remote/gmail/0.1.10
