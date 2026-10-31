@@ -164,7 +164,7 @@ Use the installed `codiff` skill and open Codiff only when the user explicitly a
 
 The skill is at `__HOME__/.codex/skills/codiff/SKILL.md`; the terminal command is `codiff`. Prefer authoring the walkthrough in the current session through the skill. Keep reviews local unless the user explicitly requests sharing or uploading. Opening a review does not authorize commits, pushes, PR comments, or merges. Continue authorized implementation without requiring a plan-approval handoff. Codiff supplements required tests and browser QA. If it is unavailable, report the limitation and continue verification using the actual Git diff.
 
-<!-- codedb:begin v0.2.5860 -->
+<!-- codedb:begin v0.2.5862 -->
 ## codedb — code intelligence policy
 
 codedb is a code-intelligence and context tool — not your editor. Reach for the
