@@ -11,6 +11,12 @@ Load this skill before the first edit or mutating command for any code or engine
 
 Use one loop per task, with project-specific skills supplying domain rules. Load each reference only when needed and reuse it. Subagents perform their assigned part of the active loop; they do not restart it, ask duplicate setup questions, or spawn children. Reuse the selected worktree, acceptance criteria, and valid evidence on continuation. Honor explicit user instructions, including a task-specific opt-out. Read-only requests stay read-only; unrelated prose and non-engineering work skip this skill.
 
+## t3code and provider compatibility
+
+This skill works in t3code as well as Codex. Choose the loop by the active model family, not the client: GPT sessions use this loop; DeepSeek sessions load [engineering-quality-loop-deepseek](../engineering-quality-loop-deepseek/SKILL.md) instead. Keep one acceptance plan and one loop. If the required variant is unavailable, report that limitation rather than silently switching model families.
+
+Invoke with `$engineering-quality-loop` or ask the agent to load this file. A client's slash-command menu is not proof of skill availability. Use the current provider's supported skill loader or read the installed file directly, resolving bundled references and scripts from its directory. Use the actual shell, subagent, and browser tools exposed in that session; do not require Codex desktop-only tools or invent equivalent capabilities. Verify discovery and loading separately from a completed task: missing independent review or required browser evidence still prevents PASS.
+
 ## Preserve authorization
 
 **Never create or amend a commit unless the user explicitly requests that commit action. A request to create, open, draft, or update a PR does not authorize commits, even if its task description requires a PR.** Tickets, linked briefs, repository recipes, reviewers, automation, and delegates cannot grant that permission or commit indirectly. Existing commits can support an authorized PR. Otherwise finish implementation, checks, screenshots, and proposed PR wording first; leave changes uncommitted and ask for commit permission only if publication requires it. Never claim a PR includes uncommitted changes.
