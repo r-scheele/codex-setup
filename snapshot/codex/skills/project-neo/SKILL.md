@@ -10,4 +10,5 @@ Resolve all project paths below against the active checkout. Current project fil
 win over this navigation list; discover applicable parent and nested instructions.
 
 Read these when present in the active checkout:
+
 - `AGENTS.md`

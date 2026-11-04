@@ -11,3 +11,6 @@ win over this navigation list; discover applicable parent and nested instruction
 
 No root agent/contribution guide was found at adaptation. Check the active checkout
 for current instructions; do not invent team-specific rules.
+
+Read the shared project policy: [seamstream-guidelines](<__HOME__/.codex/skills/seamstream-guidelines/SKILL.md>).
+Load only its task-relevant references and follow current checkout-specific rules.

@@ -10,5 +10,9 @@ Resolve all project paths below against the active checkout. Current project fil
 win over this navigation list; discover applicable parent and nested instructions.
 
 Read these when present in the active checkout:
+
 - `AGENTS.md`
 - `CLAUDE.md`
+
+Read the shared project policy: [critical-path-guidelines](<__HOME__/.codex/skills/critical-path-guidelines/SKILL.md>).
+Load only its task-relevant references and follow current checkout-specific rules.
