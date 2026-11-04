@@ -1,7 +1,7 @@
 # dev-workflows-managed
 interface:
   display_name: "Engineering loop"
-  short_description: "Fit- and cost-based GPT/Claude routing with independent review"
+  short_description: "Fit- and cost-based GPT/Claude/DeepSeek routing with independent review"
   default_prompt: "Use $engineering-loop for this task in the active repository."
 policy:
   allow_implicit_invocation: false
