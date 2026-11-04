@@ -1,0 +1,6 @@
+interface:
+  display_name: "Backend task"
+  short_description: "Plan, verify, and review work in the active project"
+  default_prompt: "Use $backend-task to investigate and plan this task in the active repository."
+policy:
+  allow_implicit_invocation: false
