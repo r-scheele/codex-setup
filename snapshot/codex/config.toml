@@ -223,11 +223,11 @@ ambient-suggestions-enabled = true
 keepRemoteControlAwakeWhilePluggedIn = true
 show-context-window-usage = false
 selected-avatar-id = "hoots"
-followUpQueueMode = "queue"
 dock-icon-preference = "codex-system"
 realtimeVoiceScreenContextEnabled = true
 open-link-in-target-preference = "in-app-browser"
 computerUseAlwaysHidePictureInPicture = true
+migratedFollowUpQueueToSteer = true
 
 [projects."__HOME__/Documents/Codex/2026-05-23/i-need-you-to-install-command"]
 trust_level = "trusted"
