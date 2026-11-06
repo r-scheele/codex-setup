@@ -107,7 +107,8 @@ def snapshot(root, extra):
         require(not p.is_absolute() and '..' not in p.parts, 'extra inputs must be relative paths inside source root')
         paths.add(root / p)
         require((root / p).exists(), f'extra input missing: {name}')
-    covered_files = {p for p in paths if not p.is_symlink() and p.is_file()}
+    links = {p for p in paths if p.is_symlink()}
+    covered_files = {p for p in paths if p not in links and p.is_file()}
     entries = []
     for p in sorted(paths):
         if p.is_symlink():
@@ -116,6 +117,9 @@ def snapshot(root, extra):
             except (OSError, RuntimeError) as e:
                 raise ValueError(f'broken or cyclic symlink: {p.relative_to(root)}') from e
             require(target.is_relative_to(root), f'symlink target escapes source root: {p.relative_to(root)}')
+            if target.is_dir():
+                require(not any(q.is_relative_to(target) for q in links),
+                        f'directory symlink target contains a selected nested symlink: {p.relative_to(root)}')
             require(target in covered_files or (target.is_dir() and any(q.is_relative_to(target) for q in covered_files)),
                     f'symlink target is not covered by source inputs: {p.relative_to(root)}')
             # Target bytes are hashed under their normal source paths; never follow links here.
