@@ -107,9 +107,21 @@ def snapshot(root, extra):
         require(not p.is_absolute() and '..' not in p.parts, 'extra inputs must be relative paths inside source root')
         paths.add(root / p)
         require((root / p).exists(), f'extra input missing: {name}')
+    covered_files = {p for p in paths if not p.is_symlink() and p.is_file()}
     entries = []
     for p in sorted(paths):
-        require(not p.is_symlink(), f'symlink needs explicit external validation; unsupported input: {p.relative_to(root)}')
+        if p.is_symlink():
+            try:
+                target = p.resolve(strict=True)
+            except (OSError, RuntimeError) as e:
+                raise ValueError(f'broken or cyclic symlink: {p.relative_to(root)}') from e
+            require(target.is_relative_to(root), f'symlink target escapes source root: {p.relative_to(root)}')
+            require(target in covered_files or (target.is_dir() and any(q.is_relative_to(target) for q in covered_files)),
+                    f'symlink target is not covered by source inputs: {p.relative_to(root)}')
+            # Target bytes are hashed under their normal source paths; never follow links here.
+            entries.append([str(p.relative_to(root)), stat.S_IMODE(p.lstat().st_mode),
+                            {'symlink': os.readlink(p), 'resolved_target': str(target.relative_to(root))}])
+            continue
         require(p.resolve().is_relative_to(root), 'input escapes source root')
         if not p.exists():  # tracked deletion participates by its absence
             continue
