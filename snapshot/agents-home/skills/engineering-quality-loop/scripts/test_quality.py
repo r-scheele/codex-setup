@@ -124,6 +124,29 @@ class SnapshotTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'submodule/directory'):
             self.snapshot()
 
+    def test_directory_ancestor_cycle_rejected(self):
+        (self.root / 'loop').symlink_to('.')
+        with self.assertRaisesRegex(ValueError, 'nested symlink'):
+            self.snapshot()
+
+    def test_mutual_directory_cycle_rejected(self):
+        for name in ['one', 'two']:
+            (self.root / name).mkdir()
+            (self.root / name / 'file').write_text('selected')
+        (self.root / 'one' / 'to_two').symlink_to('../two')
+        (self.root / 'two' / 'to_one').symlink_to('../one')
+        with self.assertRaisesRegex(ValueError, 'nested symlink'):
+            self.snapshot()
+
+    def test_directory_with_harmless_nested_alias_is_conservatively_rejected(self):
+        target = self.root / 'directory'
+        target.mkdir()
+        (target / 'file').write_text('selected')
+        (target / 'alias').symlink_to('file')
+        (self.root / 'directory_alias').symlink_to('directory')
+        with self.assertRaisesRegex(ValueError, 'nested symlink'):
+            self.snapshot()
+
     def test_freshness_check_detects_link_target_change(self):
         (self.root / 'alias').symlink_to('source.py')
         candidate = {'root': str(self.root), 'extra_inputs': [], 'source': self.snapshot()}
