@@ -163,24 +163,10 @@ multi_agent = true
 memories = true
 js_repl = false
 
-
-
-
-
-
-
-
-
 [mcp_servers.muonry]
 command = "__HOME__/bin/muonry"
 args = ["--mcp"]
 enabled = false
-
-[mcp_servers.supabase]
-url = "https://mcp.supabase.com/mcp?project_ref=xtalfjnmxnwtogxgtlxn"
-
-[mcp_servers.palmier-pro]
-url = "http://127.0.0.1:19789/mcp"
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
@@ -189,33 +175,40 @@ url = "https://developers.openai.com/mcp"
 url = "https://connect.composio.dev/mcp"
 
 [mcp_servers.node_repl]
-args = []
 command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
 env_vars = ["BROWSER_USE_ACCESS_EXECUTOR_ID", "BROWSER_USE_ACCESS_PIPE_PATH", "BROWSER_USE_ACCESS_VERIFYING_IDENTITY"]
-startup_timeout_sec = 120
+startup_timeout_sec = 120.0
 
 [mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.1029.61003"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
+CODEX_HOME = "__HOME__/.codex"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
 NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "__HOME__/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
-CODEX_HOME = "__HOME__/.codex"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
-BROWSER_USE_TINYSKY_ENABLED = "1"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.1029.61003"
 NODE_REPL_TRUSTED_SERVICES = '{"browser":"__HOME__/.codex/plugins/cache/openai-bundled/browser/26.1029.61003/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "__HOME__/.codex/computer-use/Codex Computer Use.app"
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
 [mcp_servers.computer-use]
 command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
 args = ["mcp"]
 cwd = "."
 enabled = false
+
+[mcp_servers.codedb]
+command = "__HOME__/bin/codedb"
+args = ["mcp"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.deepwiki]
+url = "https://mcp.deepwiki.com/mcp"
 
 [desktop]
 conversationDetailMode = "STEPS_COMMANDS"
@@ -630,11 +623,3 @@ NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ec
 
 [apps.connector_5f3c8c41a1e54ad7a76272c89e2554fa.tools."google_drive.copy_file"]
 approval_mode = "approve"
-
-[mcp_servers.codedb]
-command = "__HOME__/bin/codedb"
-args = ["mcp"]
-startup_timeout_sec = 30
-
-[mcp_servers.deepwiki]
-url = "https://mcp.deepwiki.com/mcp"
