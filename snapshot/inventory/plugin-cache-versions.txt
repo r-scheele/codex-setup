@@ -15,7 +15,7 @@ openai-curated-remote/pages/0.1.26
 openai-curated-remote/plugin-creator/0.1.28
 openai-curated-remote/plugin-management/0.1.0
 openai-curated-remote/sites/1.1.7
-openai-curated-remote/visualize/1.0.109
+openai-curated-remote/visualize/1.0.89
 openai-curated-remote/work-pets/0.1.6
 openai-curated-remote/write-like-me/0.1.1
 openai-curated/alpaca/11c74d6b
