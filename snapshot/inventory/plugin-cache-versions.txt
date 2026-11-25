@@ -1,9 +1,9 @@
 i-have-adhd/i-have-adhd/0.4.1
-openai-bundled/browser/26.1111.21308
-openai-bundled/codex-app-tools/26.1111.21308
-openai-bundled/computer-use/1.0.1001895
-openai-bundled/unified-computer-use/26.1111.21308
-openai-bundled/visualize/1.0.97
+openai-bundled/browser/26.1117.41037
+openai-bundled/codex-app-tools/26.1117.41037
+openai-bundled/computer-use/1.0.1001980
+openai-bundled/unified-computer-use/26.1117.41037
+openai-bundled/visualize/1.0.109
 openai-curated-remote/canva/17.0.3
 openai-curated-remote/github/0.1.13-77c10e110b37
 openai-curated-remote/gmail/0.1.10
@@ -15,7 +15,7 @@ openai-curated-remote/pages/0.1.26
 openai-curated-remote/plugin-creator/0.1.28
 openai-curated-remote/plugin-management/0.1.0
 openai-curated-remote/sites/1.1.7
-openai-curated-remote/visualize/1.0.89
+openai-curated-remote/visualize/1.0.109
 openai-curated-remote/work-pets/0.1.6
 openai-curated-remote/write-like-me/0.1.1
 openai-curated/alpaca/11c74d6b
