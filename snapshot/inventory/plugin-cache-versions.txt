@@ -9,7 +9,6 @@ openai-curated-remote/app-6a314a73f8ac819195b0d55e36b9c609/2.13.0
 openai-curated-remote/binance/5.0.1
 openai-curated-remote/biorender/2.0.1
 openai-curated-remote/figma/21.0.0
-openai-curated-remote/fiscal-ai/3.1.1
 openai-curated-remote/github/0.1.13-77c10e110b37
 openai-curated-remote/gmail/0.1.10
 openai-curated-remote/google-calendar/1.2.7
@@ -23,7 +22,6 @@ openai-curated-remote/plugin-management/0.1.0
 openai-curated-remote/sites/1.2.0-relay
 openai-curated-remote/visualize/1.0.89
 openai-curated-remote/work-pets/0.1.6
-openai-curated-remote/yepcode/1.0.0
 openai-curated/alpaca/11c74d6b
 openai-curated/binance/11c74d6b
 openai-curated/biorender/11c74d6b
